@@ -3,7 +3,35 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 12 May 2022 22:58:03 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 13 May 2022 01:11:58 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>docker</title>
+  <link>http://example.org/tags/docker/</link>
+  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/docker/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>linux</title>
+  <link>http://example.org/tags/linux/</link>
+  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/linux/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>nas</title>
+  <link>http://example.org/tags/nas/</link>
+  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/nas/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>samba</title>
+  <link>http://example.org/tags/samba/</link>
+  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/samba/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>Principle</title>
   <link>http://example.org/tags/principle/</link>
   <pubDate>Thu, 12 May 2022 22:58:03 &#43;0800</pubDate>
@@ -44,27 +72,6 @@
   <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/tubesync/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>youtube</title>
-  <link>http://example.org/tags/youtube/</link>
-  <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/youtube/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>心学</title>
-  <link>http://example.org/tags/%E5%BF%83%E5%AD%A6/</link>
-  <pubDate>Thu, 12 May 2022 21:25:47 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E5%BF%83%E5%AD%A6/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>王阳明</title>
-  <link>http://example.org/tags/%E7%8E%8B%E9%98%B3%E6%98%8E/</link>
-  <pubDate>Thu, 12 May 2022 21:25:47 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E7%8E%8B%E9%98%B3%E6%98%8E/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
