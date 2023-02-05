@@ -2,20 +2,16 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>http://example.org/categories/</loc><lastmod>2023-02-06T01:08:52&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/draft/</loc><lastmod>2023-02-06T01:08:52&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/categories/draft/</loc><lastmod>2023-02-06T01:08:52&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/</loc><lastmod>2023-02-06T01:08:52&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/posts/</loc><lastmod>2023-02-06T01:08:52&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/</loc><lastmod>2023-02-06T01:08:52&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/posts/testingtesting/</loc><lastmod>2023-02-06T01:08:52&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/posts/testtest/</loc><lastmod>2023-02-05T14:34:11&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/linux-nas-samba/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/categories/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
       <loc>http://example.org/categories/computer/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/docker/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/linux/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/nas/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/posts/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/samba/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/</loc><lastmod>2022-05-13T01:11:58&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/principle/</loc><lastmod>2022-05-12T22:58:03&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/speculation/</loc><lastmod>2022-05-12T22:58:03&#43;08:00</lastmod></url><url>
       <loc>http://example.org/categories/speculation/</loc><lastmod>2022-05-12T22:58:03&#43;08:00</lastmod></url><url>

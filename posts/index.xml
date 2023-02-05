@@ -3,21 +3,7 @@
     <title>All Posts - Eric vlog</title>
     <link>http://example.org/posts/</link>
     <description>All Posts | Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 06 Feb 2023 01:08:52 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
-  <title>Testingtesting</title>
-  <link>http://example.org/posts/testingtesting/</link>
-  <pubDate>Mon, 06 Feb 2023 01:08:52 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/testingtesting/</guid>
-  <description><![CDATA[Hello welcome to my blogs]]></description>
-</item><item>
-  <title>Testtest</title>
-  <link>http://example.org/posts/testtest/</link>
-  <pubDate>Sun, 05 Feb 2023 14:34:11 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/testtest/</guid>
-  <description><![CDATA[Hello welcome to my blogs]]></description>
-</item><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 13 May 2022 01:11:58 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
   <title>Armbian linux as nas</title>
   <link>http://example.org/posts/linux-nas-samba/</link>
   <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
