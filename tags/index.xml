@@ -1,0 +1,77 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Tags - Tag - Eric vlog</title>
+    <link>http://example.org/tags/</link>
+    <description>Tags - Tag - Eric vlog</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 05 Feb 2023 14:34:11 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>draft</title>
+  <link>http://example.org/tags/draft/</link>
+  <pubDate>Sun, 05 Feb 2023 14:34:11 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/draft/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>docker</title>
+  <link>http://example.org/tags/docker/</link>
+  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/docker/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>linux</title>
+  <link>http://example.org/tags/linux/</link>
+  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/linux/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>nas</title>
+  <link>http://example.org/tags/nas/</link>
+  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/nas/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>samba</title>
+  <link>http://example.org/tags/samba/</link>
+  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/samba/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>Principle</title>
+  <link>http://example.org/tags/principle/</link>
+  <pubDate>Thu, 12 May 2022 22:58:03 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/principle/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>speculation</title>
+  <link>http://example.org/tags/speculation/</link>
+  <pubDate>Thu, 12 May 2022 22:58:03 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/speculation/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>stocks</title>
+  <link>http://example.org/tags/stocks/</link>
+  <pubDate>Thu, 12 May 2022 22:58:03 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/stocks/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>database</title>
+  <link>http://example.org/tags/database/</link>
+  <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/database/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>postgre</title>
+  <link>http://example.org/tags/postgre/</link>
+  <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/postgre/</guid>
+  <description><![CDATA[]]></description>
+</item></channel>
+</rss>
