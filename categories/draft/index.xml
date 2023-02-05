@@ -3,7 +3,14 @@
     <title>draft - Category - Eric vlog</title>
     <link>http://example.org/categories/draft/</link>
     <description>draft - Category - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 05 Feb 2023 14:34:11 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/draft/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 06 Feb 2023 01:08:52 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/draft/" rel="self" type="application/rss+xml" /><item>
+  <title>Testingtesting</title>
+  <link>http://example.org/posts/testingtesting/</link>
+  <pubDate>Mon, 06 Feb 2023 01:08:52 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/testingtesting/</guid>
+  <description><![CDATA[Hello welcome to my blogs]]></description>
+</item><item>
   <title>Testtest</title>
   <link>http://example.org/posts/testtest/</link>
   <pubDate>Sun, 05 Feb 2023 14:34:11 &#43;0800</pubDate>
