@@ -3,75 +3,75 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 13 May 2022 01:11:58 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
-  <title>docker</title>
-  <link>http://example.org/tags/docker/</link>
-  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>ego</title>
+  <link>http://example.org/tags/ego/</link>
+  <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/docker/</guid>
+  <guid>http://example.org/tags/ego/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>linux</title>
-  <link>http://example.org/tags/linux/</link>
-  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <title>higher self</title>
+  <link>http://example.org/tags/higher-self/</link>
+  <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/linux/</guid>
+  <guid>http://example.org/tags/higher-self/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>nas</title>
-  <link>http://example.org/tags/nas/</link>
-  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <title>samadhi</title>
+  <link>http://example.org/tags/samadhi/</link>
+  <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/nas/</guid>
+  <guid>http://example.org/tags/samadhi/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>samba</title>
-  <link>http://example.org/tags/samba/</link>
-  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
+  <title>spirits</title>
+  <link>http://example.org/tags/spirits/</link>
+  <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/samba/</guid>
+  <guid>http://example.org/tags/spirits/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>Principle</title>
-  <link>http://example.org/tags/principle/</link>
-  <pubDate>Thu, 12 May 2022 22:58:03 &#43;0800</pubDate>
+  <title>三摩地</title>
+  <link>http://example.org/tags/%E4%B8%89%E6%91%A9%E5%9C%B0/</link>
+  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/principle/</guid>
+  <guid>http://example.org/tags/%E4%B8%89%E6%91%A9%E5%9C%B0/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>speculation</title>
-  <link>http://example.org/tags/speculation/</link>
-  <pubDate>Thu, 12 May 2022 22:58:03 &#43;0800</pubDate>
+  <title>意识</title>
+  <link>http://example.org/tags/%E6%84%8F%E8%AF%86/</link>
+  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/speculation/</guid>
+  <guid>http://example.org/tags/%E6%84%8F%E8%AF%86/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>stocks</title>
-  <link>http://example.org/tags/stocks/</link>
-  <pubDate>Thu, 12 May 2022 22:58:03 &#43;0800</pubDate>
+  <title>灵性</title>
+  <link>http://example.org/tags/%E7%81%B5%E6%80%A7/</link>
+  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/stocks/</guid>
+  <guid>http://example.org/tags/%E7%81%B5%E6%80%A7/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>database</title>
-  <link>http://example.org/tags/database/</link>
-  <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
+  <title>觉醒</title>
+  <link>http://example.org/tags/%E8%A7%89%E9%86%92/</link>
+  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/database/</guid>
+  <guid>http://example.org/tags/%E8%A7%89%E9%86%92/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>postgre</title>
-  <link>http://example.org/tags/postgre/</link>
-  <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
+  <title>inner work</title>
+  <link>http://example.org/tags/inner-work/</link>
+  <pubDate>Thu, 10 Aug 2023 02:37:48 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/postgre/</guid>
+  <guid>http://example.org/tags/inner-work/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>tubesync</title>
-  <link>http://example.org/tags/tubesync/</link>
-  <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
+  <title>Memories</title>
+  <link>http://example.org/tags/memories/</link>
+  <pubDate>Thu, 10 Aug 2023 02:37:48 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/tubesync/</guid>
+  <guid>http://example.org/tags/memories/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
