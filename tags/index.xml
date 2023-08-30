@@ -3,7 +3,28 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>前世今生</title>
+  <link>http://example.org/tags/%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
+  <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>灵修</title>
+  <link>http://example.org/tags/%E7%81%B5%E4%BF%AE/</link>
+  <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/%E7%81%B5%E4%BF%AE/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>疗愈</title>
+  <link>http://example.org/tags/%E7%96%97%E6%84%88/</link>
+  <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/%E7%96%97%E6%84%88/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>ego</title>
   <link>http://example.org/tags/ego/</link>
   <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
@@ -51,27 +72,6 @@
   <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/%E7%81%B5%E6%80%A7/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>觉醒</title>
-  <link>http://example.org/tags/%E8%A7%89%E9%86%92/</link>
-  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E8%A7%89%E9%86%92/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>docker</title>
-  <link>http://example.org/tags/docker/</link>
-  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/docker/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>linux</title>
-  <link>http://example.org/tags/linux/</link>
-  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/linux/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
