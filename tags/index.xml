@@ -3,7 +3,28 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 May 2024 18:06:04 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>blog</title>
+  <link>http://example.org/tags/blog/</link>
+  <pubDate>Sat, 18 May 2024 18:06:04 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/blog/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>github</title>
+  <link>http://example.org/tags/github/</link>
+  <pubDate>Sat, 18 May 2024 18:06:04 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/github/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>hugo</title>
+  <link>http://example.org/tags/hugo/</link>
+  <pubDate>Sat, 18 May 2024 18:06:04 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/hugo/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>前世今生</title>
   <link>http://example.org/tags/%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
   <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
@@ -51,27 +72,6 @@
   <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/spirits/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>三摩地</title>
-  <link>http://example.org/tags/%E4%B8%89%E6%91%A9%E5%9C%B0/</link>
-  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E4%B8%89%E6%91%A9%E5%9C%B0/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>意识</title>
-  <link>http://example.org/tags/%E6%84%8F%E8%AF%86/</link>
-  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E6%84%8F%E8%AF%86/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>灵性</title>
-  <link>http://example.org/tags/%E7%81%B5%E6%80%A7/</link>
-  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E7%81%B5%E6%80%A7/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
