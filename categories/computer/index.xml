@@ -9,9 +9,9 @@
   <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
   <author>eric</author>
   <guid>http://example.org/posts/linux-nas-samba/</guid>
-  <description><![CDATA[Install Docker &amp; Portainer 2.0 on Debian Based Distros! Install and start docker by running the commands below. sudo apt install docker.io sudo systemctl start docker
-Download and run Portainer 2.0 by running the commands below. sudo docker pull portainer/portainer-ce sudo docker run --restart=always --name=portainer -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce
-This will install Docker and it will be accessible by the workstation’s IP address and port 9000. When you get there, create a username and password.]]></description>
+  <description><![CDATA[🚀 Step-by-Step Guide for Setting Up Your Debian Server 1. Install sudo Command Switch to root user: su - Install sudo: apt-get install sudo Add user to sudo groups: usermod -aG sudo username Check user groups: id username Logout and login SSH again. 2. 🐋 Install Docker &amp; Portainer 2.0 on Debian-Based Distros Install Docker:
+sudo apt install docker.io sudo systemctl start docker Download and run Portainer 2.0:
+sudo docker pull portainer/portainer-ce sudo docker run --restart=always --name=portainer -d -p 9000:9000 -v /var/run/docker.]]></description>
 </item><item>
   <title>Tubesync and Postgresql Guide</title>
   <link>http://example.org/posts/tubesync-and-postgresql-guide/</link>
