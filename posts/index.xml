@@ -3,7 +3,14 @@
     <title>All Posts - Eric vlog</title>
     <link>http://example.org/posts/</link>
     <description>All Posts | Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 May 2024 18:06:04 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 May 2024 09:24:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Rclone Automount on Linux</title>
+  <link>http://example.org/posts/rclone-automount-linux/</link>
+  <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/rclone-automount-linux/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>Hugo Blog on github guide</title>
   <link>http://example.org/posts/hugo-blog-guide/</link>
   <pubDate>Sat, 18 May 2024 18:06:04 &#43;0800</pubDate>
