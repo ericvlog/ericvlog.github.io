@@ -3,7 +3,43 @@
     <title>draft - Tag - Eric vlog</title>
     <link>http://example.org/tags/draft/</link>
     <description>draft - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 May 2024 19:50:39 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/draft/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 May 2024 20:56:35 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/draft/" rel="self" type="application/rss+xml" /><item>
+  <title>Ttt</title>
+  <link>http://example.org/posts/ttt/</link>
+  <pubDate>Tue, 21 May 2024 20:56:35 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/ttt/</guid>
+  <description><![CDATA[Hello welcome to my blogs]]></description>
+</item><item>
+  <title>New5</title>
+  <link>http://example.org/posts/new5/</link>
+  <pubDate>Tue, 21 May 2024 20:25:59 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/new5/</guid>
+  <description><![CDATA[<p>ddddddddddddddddddddddddddddddddfffffffffff
+ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>]]></description>
+</item><item>
+  <title>New4</title>
+  <link>http://example.org/posts/new4/</link>
+  <pubDate>Tue, 21 May 2024 20:14:38 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/new4/</guid>
+  <description><![CDATA[<p>test clouadi</p>]]></description>
+</item><item>
+  <title>New3</title>
+  <link>http://example.org/posts/new3/</link>
+  <pubDate>Tue, 21 May 2024 20:10:53 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/new3/</guid>
+  <description><![CDATA[<p>ddddddddddddddddddddddd</p>]]></description>
+</item><item>
+  <title>New2</title>
+  <link>http://example.org/posts/new2/</link>
+  <pubDate>Tue, 21 May 2024 20:01:18 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/new2/</guid>
+  <description><![CDATA[<p>ddddd tst new taskddddddd</p>]]></description>
+</item><item>
   <title>Testtest</title>
   <link>http://example.org/posts/testtest/</link>
   <pubDate>Tue, 21 May 2024 19:50:39 &#43;0800</pubDate>
