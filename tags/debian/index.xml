@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>rclone - Tag - Eric vlog</title>
-    <link>http://example.org/tags/rclone/</link>
-    <description>rclone - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 May 2024 09:24:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/rclone/" rel="self" type="application/rss+xml" /><item>
+    <title>debian - Tag - Eric vlog</title>
+    <link>http://example.org/tags/debian/</link>
+    <description>debian - Tag - Eric vlog</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 May 2024 09:24:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/debian/" rel="self" type="application/rss+xml" /><item>
   <title>Rclone Automount on Linux</title>
   <link>http://example.org/posts/rclone-automount-linux/</link>
   <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>

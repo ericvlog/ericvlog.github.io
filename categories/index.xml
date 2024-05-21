@@ -3,12 +3,12 @@
     <title>Categories - Category - Eric vlog</title>
     <link>http://example.org/categories/</link>
     <description>Categories - Category - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 May 2024 20:56:35 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/" rel="self" type="application/rss+xml" /><item>
-  <title>draft</title>
-  <link>http://example.org/categories/draft/</link>
-  <pubDate>Tue, 21 May 2024 20:56:35 &#43;0800</pubDate>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 May 2024 09:24:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/" rel="self" type="application/rss+xml" /><item>
+  <title>computer</title>
+  <link>http://example.org/categories/computer/</link>
+  <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/categories/draft/</guid>
+  <guid>http://example.org/categories/computer/</guid>
   <description><![CDATA[]]></description>
 </item><item>
   <title>blog</title>
@@ -23,13 +23,6 @@
   <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/categories/spirituality/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>computer</title>
-  <link>http://example.org/categories/computer/</link>
-  <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/categories/computer/</guid>
   <description><![CDATA[]]></description>
 </item><item>
   <title>Speculation</title>

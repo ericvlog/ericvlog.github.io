@@ -3,12 +3,33 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 May 2024 20:56:35 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
-  <title>draft</title>
-  <link>http://example.org/tags/draft/</link>
-  <pubDate>Tue, 21 May 2024 20:56:35 &#43;0800</pubDate>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 May 2024 09:24:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>automount</title>
+  <link>http://example.org/tags/automount/</link>
+  <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/draft/</guid>
+  <guid>http://example.org/tags/automount/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>debian</title>
+  <link>http://example.org/tags/debian/</link>
+  <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/debian/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>linux</title>
+  <link>http://example.org/tags/linux/</link>
+  <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/linux/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>rclone</title>
+  <link>http://example.org/tags/rclone/</link>
+  <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/rclone/</guid>
   <description><![CDATA[]]></description>
 </item><item>
   <title>blog</title>
@@ -51,27 +72,6 @@
   <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/%E7%96%97%E6%84%88/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>ego</title>
-  <link>http://example.org/tags/ego/</link>
-  <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/ego/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>higher self</title>
-  <link>http://example.org/tags/higher-self/</link>
-  <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/higher-self/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>samadhi</title>
-  <link>http://example.org/tags/samadhi/</link>
-  <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/samadhi/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
