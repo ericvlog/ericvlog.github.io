@@ -16,7 +16,7 @@ Create a systemd service unit file: Open a terminal and create a new service uni
 sudo nano /etc/systemd/system/rclone-mount.service Add the following content to the file:
 [Unit] Description=RClone Mount Service After=network-online.]]></description>
 </item><item>
-  <title>Hugo Blog on github guide</title>
+  <title>Hugo Blog on GitHub guide</title>
   <link>http://example.org/posts/hugo-blog-guide/</link>
   <pubDate>Sat, 18 May 2024 18:06:04 &#43;0800</pubDate>
   <author>Eric</author>
