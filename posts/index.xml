@@ -3,7 +3,14 @@
     <title>All Posts - Eric vlog</title>
     <link>http://example.org/posts/</link>
     <description>All Posts | Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 May 2024 09:24:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 May 2024 19:50:39 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Testtest</title>
+  <link>http://example.org/posts/testtest/</link>
+  <pubDate>Tue, 21 May 2024 19:50:39 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/testtest/</guid>
+  <description><![CDATA[<p>ddddddddddd</p>]]></description>
+</item><item>
   <title>Rclone Automount on Linux</title>
   <link>http://example.org/posts/rclone-automount-linux/</link>
   <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
@@ -472,13 +479,5 @@ sudo docker pull portainer/portainer-ce sudo docker run --restart=always --name=
   <author>Eric</author>
   <guid>http://example.org/posts/tubesync-and-postgresql-guide/</guid>
   <description><![CDATA[]]></description>
-</item><item>
-  <title>王阳明的知行合一</title>
-  <link>http://example.org/posts/wang-yang-ming/</link>
-  <pubDate>Thu, 12 May 2022 21:25:47 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/wang-yang-ming/</guid>
-  <description><![CDATA[<p></p>
-<h3 id="心就是一念善恶都在这一念">心就是*&ldquo;一念&rdquo;*,善恶都在这一念</h3>]]></description>
 </item></channel>
 </rss>
