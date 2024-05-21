@@ -11,7 +11,7 @@
   <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
   <author>Eric</author>
   <guid>http://example.org/posts/rclone-automount-linux/</guid>
-  <description><![CDATA[Automatically Mounting rclone Remote Directory on Debian 11 To automatically mount the remote directory using rclone on system restart in Debian 11, you can create a systemd service unit. Here&rsquo;s how you can do it:
+  <description><![CDATA[Automatically Mounting rclone Remote Directory on Debian 11 (pikpak) To automatically mount the remote directory using rclone on system restart in Debian 11, you can create a systemd service unit. Here&rsquo;s how you can do it:
 Create a systemd service unit file: Open a terminal and create a new service unit file using your favorite text editor. For example:
 sudo nano /etc/systemd/system/rclone-mount.service Add the following content to the file:
 [Unit] Description=RClone Mount Service After=network-online.]]></description>
