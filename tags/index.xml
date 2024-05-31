@@ -3,7 +3,35 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 May 2024 09:24:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 31 May 2024 13:55:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>freshrss</title>
+  <link>http://example.org/tags/freshrss/</link>
+  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/freshrss/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>rss</title>
+  <link>http://example.org/tags/rss/</link>
+  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/rss/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>rsshub</title>
+  <link>http://example.org/tags/rsshub/</link>
+  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/rsshub/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>ttrss</title>
+  <link>http://example.org/tags/ttrss/</link>
+  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/ttrss/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>automount</title>
   <link>http://example.org/tags/automount/</link>
   <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
@@ -44,34 +72,6 @@
   <pubDate>Sat, 18 May 2024 18:06:04 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/github/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>hugo</title>
-  <link>http://example.org/tags/hugo/</link>
-  <pubDate>Sat, 18 May 2024 18:06:04 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/hugo/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>前世今生</title>
-  <link>http://example.org/tags/%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
-  <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>灵修</title>
-  <link>http://example.org/tags/%E7%81%B5%E4%BF%AE/</link>
-  <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E7%81%B5%E4%BF%AE/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>疗愈</title>
-  <link>http://example.org/tags/%E7%96%97%E6%84%88/</link>
-  <pubDate>Wed, 30 Aug 2023 15:50:06 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/%E7%96%97%E6%84%88/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
