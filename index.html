@@ -249,72 +249,8 @@
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/rsshub-ttrss-freshrss/">Install rsshub ,freshrss and ttrss in Debian</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
-      Eric</span></span>&nbsp;<span class="post-publish" title='2024-05-31 13:55:50'>published on <time datetime="31-05-2024">31-05-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a>&ensp;<a href="/categories/internet/"><i class="far fa-folder fa-fw"></i>&nbsp;internet</a></span></div><div class="content"><h2 id="example-docker-compose-files">Example docker compose files</h2>
-<pre tabindex="0"><code>version: &#39;3&#39;
-
-services:
-  rsshub:
-    image: diygod/rsshub
-    container_name: rsshub
-    ports:
-      - &#34;1200:1200&#34;
-    environment:
-      - NODE_ENV=production
-      - CACHE_TYPE=redis
-      - REDIS_URL=redis://redis:6379/
-      - PUPPETEER_WS_ENDPOINT=ws://browserless:3100
-    depends_on:
-      - redis
-      - browserless
-    restart: always
-    volumes:
-      - /home/plsharevme/appdata/rsshub/rsshub_data:/app/data
-
-  freshrss:
-    image: freshrss/freshrss:latest
-    container_name: freshrss
-    restart: unless-stopped
-    ports:
-      - &#34;9988:80&#34;
-    volumes:
-      - /home/plsharevme/appdata/rsshub/freshrss_data:/var/www/FreshRSS/data
-      - /home/plsharevme/appdata/rsshub/freshrss_extensions:/var/www/FreshRSS/extensions
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - CRON_MIN=&#34;1,31&#34;
-      - TZ=&#34;Asia/Kuala_Lumpur&#34;
-    depends_on:
-      - db
-      - redis
-
-  db:
-    image: postgres:12
-    container_name: freshrss_db
-    environment:
-      - POSTGRES_USER=freshrss
-      - POSTGRES_PASSWORD=freshrss
-      - POSTGRES_DB=freshrss
-    volumes:
-      - /home/plsharevme/appdata/rsshub/freshrss_db_data:/var/lib/postgresql/data
-    restart: always
-
-  redis:
-    image: redis:alpine
-    container_name: redis
-    restart: always
-    volumes:
-      - /home/plsharevme/appdata/rsshub/redis_data:/data
-
-  browserless:
-    image: browserless/chrome
-    container_name: browserless
-    ports:
-      - &#34;3100:3000&#34;
-    restart: always
-</code></pre><p>In this example all data will stored at <code>/home/plsharevme/appdata/rsshub</code></p>
-<p>It contains rsshub and freshrss.</p>
-<p><code>restart npm and use rsshubip:port/route/:id to add rss feeds into freshrss</code></p></div><div class="post-footer">
+      Eric</span></span>&nbsp;<span class="post-publish" title='2024-05-31 13:55:50'>published on <time datetime="31-05-2024">31-05-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a>&ensp;<a href="/categories/internet/"><i class="far fa-folder fa-fw"></i>&nbsp;internet</a></span></div><div class="content"><h2 id="compose-with-rsshub-freshrss-container">Compose with rsshub, freshrss container.</h2>
+<h3 id="1-rsshub--freshrss">1. rsshub + freshrss</h3></div><div class="post-footer">
     <a href="/posts/rsshub-ttrss-freshrss/">Read More</a><div class="post-tags">
         <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/rsshub/">rsshub</a>,&nbsp;<a href="/tags/ttrss/">ttrss</a>,&nbsp;<a href="/tags/freshrss/">freshrss</a>,&nbsp;<a href="/tags/rss/">rss</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
