@@ -11,7 +11,7 @@
 <meta name="keywords" content="linux,samba,raid" /><meta itemprop="name" content="Armbian linux as nas">
 <meta itemprop="description" content="hello,it me eric"><meta itemprop="datePublished" content="2022-05-13T01:11:58+08:00" />
 <meta itemprop="dateModified" content="2022-05-13T01:11:58+08:00" />
-<meta itemprop="wordCount" content="564"><meta itemprop="image" content="http://example.org/logo.png"/>
+<meta itemprop="wordCount" content="812"><meta itemprop="image" content="http://example.org/logo.png"/>
 <meta itemprop="keywords" content="linux,samba,nas,docker," /><meta property="og:title" content="Armbian linux as nas" />
 <meta property="og:description" content="hello,it me eric" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/example.org\/posts\/linux-nas-samba\/"
-    },"genre": "posts","keywords": "linux, samba, nas, docker","wordcount":  564 ,
+    },"genre": "posts","keywords": "linux, samba, nas, docker","wordcount":  812 ,
     "url": "http:\/\/example.org\/posts\/linux-nas-samba\/","datePublished": "2022-05-13T01:11:58+08:00","dateModified": "2022-05-13T01:11:58+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -165,8 +165,8 @@
           <span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div>
       <div class="post-meta-line"><span title=2022-05-13&#32;01:11:58>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="13-05-2022" >13-05-2022</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;564 words&nbsp;
-        <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;812 words&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -182,7 +182,8 @@
     <li><a href="#6--set-up-samba-shares">6. 🗂️ Set up Samba Shares</a></li>
     <li><a href="#7--view-linux-machines-from-a-windows-10-network">7. 🌐 View Linux Machines from a Windows 10 Network</a></li>
     <li><a href="#8--disable-zram-optional">8. ❌ Disable ZRAM (Optional)</a></li>
-    <li><a href="#9--mount-raid-0-on-debian">9. ⚙️ Mount RAID 0 on Debian</a></li>
+    <li><a href="#add-new-raid-to-system-debian">Add New Raid to system Debian</a></li>
+    <li><a href="#10--mount-raid-0-on-debian">10. ⚙️ Mount RAID 0 on Debian</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h1 id="-step-by-step-guide-for-setting-up-your-debian-server">🚀 Step-by-Step Guide for Setting Up Your Debian Server</h1>
@@ -405,7 +406,56 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo reboot
 </span></span></code></pre></div></li>
 </ol>
-<h2 id="9--mount-raid-0-on-debian">9. ⚙️ Mount RAID 0 on Debian</h2>
+<h2 id="add-new-raid-to-system-debian">Add New Raid to system Debian</h2>
+<ol>
+<li>
+<p>Install mdadm</p>
+<p>First, you&rsquo;ll need to install the mdadm package if it&rsquo;s not already installed.</p>
+<pre tabindex="0"><code>sudo apt update
+sudo apt install mdadm
+</code></pre></li>
+<li>
+<p>Identify the Disks</p>
+<p>Identify the disks you want to use for the RAID array. You can use lsblk or fdisk -l to list all available disks.</p>
+<p><code>lsblk</code></p>
+<p>Make a note of the device names <strong>(e.g., /dev/sdb, /dev/sdc, etc.).</strong></p>
+</li>
+<li>
+<p>Create the RAID Array</p>
+<p>Use mdadm to create the RAID array. The following example creates a RAID 1 array (mirroring) with two disks:</p>
+<pre tabindex="0"><code>sudo mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb /dev/sdc
+</code></pre><ul>
+<li>/dev/md0 is the RAID device name.</li>
+<li>&ndash;level=1 specifies the RAID level (RAID 1 in this case).</li>
+<li>&ndash;raid-devices=2 specifies the number of devices in the array.</li>
+<li>/dev/sdb and /dev/sdc are the disks to be used in the RAID array.</li>
+</ul>
+</li>
+<li>
+<p>Create a Filesystem</p>
+<p>Once the RAID array is created, you need to create a filesystem on it. For example, to create an ext4 filesystem:</p>
+<p><code>sudo mkfs.ext4 /dev/md0</code></p>
+</li>
+<li>
+<p>Mount the RAID Array</p>
+<p>Create a mount point and mount the RAID array:</p>
+<p><code>sudo mkdir -p /mnt/raid</code>
+<code>sudo mount /dev/md0 /mnt/raid</code></p>
+</li>
+<li>
+<p>Update /etc/fstab</p>
+<p>To ensure the RAID array is mounted automatically at boot, add an entry to /etc/fstab. First, get the UUID of the RAID array:</p>
+<p><code>sudo blkid /dev/md0</code></p>
+<p>Add the following line to /etc/fstab, replacing UUID=<!-- raw HTML omitted --> with the actual UUID:</p>
+<p><code>UUID=&lt;your-uuid&gt; /mnt/raid ext4 defaults 0 0</code></p>
+</li>
+<li>
+<p>Verify the RAID Array</p>
+<p>You can check the status of the RAID array using:</p>
+<pre tabindex="0"><code>sudo mdadm --detail /dev/md0
+</code></pre></li>
+</ol>
+<h2 id="10--mount-raid-0-on-debian">10. ⚙️ Mount RAID 0 on Debian</h2>
 <ol>
 <li>
 <p>Install <code>mdadm</code>:</p>

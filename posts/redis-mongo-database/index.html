@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>Redis Mongo Database - Eric vlog</title><meta name="author" content=": ">
+<meta name="description" content="redis &amp; mongo " />
+<meta name="keywords" content="redis,mongo,database" /><meta itemprop="name" content="Redis Mongo Database">
+<meta itemprop="description" content="redis &amp; mongo "><meta itemprop="datePublished" content="2024-06-04T16:57:31+08:00" />
+<meta itemprop="dateModified" content="2024-06-04T16:57:31+08:00" />
+<meta itemprop="wordCount" content="520"><meta itemprop="image" content="http://example.org/logo.png"/>
+<meta itemprop="keywords" content="redis,mongo,database," /><meta property="og:title" content="Redis Mongo Database" />
+<meta property="og:description" content="redis &amp; mongo " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/redis-mongo-database/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-06-04T16:57:31+08:00" />
+<meta property="article:modified_time" content="2024-06-04T16:57:31+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="Redis Mongo Database"/>
+<meta name="twitter:description" content="redis &amp; mongo "/>
+<meta name="application-name" content="Eric vlog">
+<meta name="apple-mobile-web-app-title" content="Eric vlog"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/redis-mongo-database/" /><link rel="prev" href="http://example.org/posts/rsshub-ttrss-freshrss/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Redis Mongo Database",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/example.org\/posts\/redis-mongo-database\/"
+    },"genre": "posts","keywords": "redis, mongo, database","wordcount":  520 ,
+    "url": "http:\/\/example.org\/posts\/redis-mongo-database\/","datePublished": "2024-06-04T16:57:31+08:00","dateModified": "2024-06-04T16:57:31+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Eric"
+      },"description": "redis \u0026 mongo "
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Eric vlog"><span class="header-title-text">ωєℓ¢σмє тσ му вℓσg</span></a></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >Tags</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >Categories</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fas fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fas fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Eric vlog"><span class="header-title-text">ωєℓ¢σмє тσ му вℓσg</span></a></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fas fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fas fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >Tags</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >Categories</a></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">Redis Mongo Database</h1><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
+      Eric</span></span>
+          <span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div>
+      <div class="post-meta-line"><span title=2024-06-04&#32;16:57:31>
+            <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="04-06-2024" >04-06-2024</time>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;520 words&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-prerequisites">🛠️ Prerequisites</a></li>
+    <li><a href="#-using-docker-compose">🚀 Using Docker Compose</a>
+      <ul>
+        <li><a href="#-interacting-with-redis">🔴 Interacting with Redis</a></li>
+        <li><a href="#-interacting-with-mongodb">🟢 Interacting with MongoDB</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="-how-to-check-and-delete-redis-and-mongodb-data-using-docker-compose">📚 How to Check and Delete Redis and MongoDB Data Using Docker Compose</h1>
+<p>This tutorial will guide you through the process of checking if a key exists in a Redis database, deleting it if necessary, and also how to delete data from MongoDB, all using Docker Compose commands.</p>
+<h2 id="-prerequisites">🛠️ Prerequisites</h2>
+<ul>
+<li>Docker and Docker Compose installed</li>
+<li>Redis and MongoDB services defined in your <code>docker-compose.yml</code> file</li>
+</ul>
+<h2 id="-using-docker-compose">🚀 Using Docker Compose</h2>
+<h3 id="-interacting-with-redis">🔴 Interacting with Redis</h3>
+<h4 id="-check-if-a-key-exists">🔍 Check if a Key Exists</h4>
+<ol>
+<li>
+<p><strong>Ensure your Redis container is running</strong> by using Docker Compose:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose up -d
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Connect to the Redis container</strong> using the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose <span class="nb">exec</span> redis redis-cli
+</span></span></code></pre></div><p>Replace <code>redis</code> with the name of your Redis service defined in your <code>docker-compose.yml</code> file.</p>
+</li>
+<li>
+<p><strong>Check if the key exists</strong> using the <code>EXISTS</code> command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">EXISTS your-key-name
+</span></span></code></pre></div><p>Replace <code>your-key-name</code> with the actual key you want to check. The command will return <code>1</code> if the key exists and <code>0</code> if it does not.</p>
+</li>
+</ol>
+<h4 id="-check-all-keys">🗝️ Check All Keys</h4>
+<ol>
+<li><strong>List all keys</strong> using the <code>KEYS</code> command:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">KEYS *
+</span></span></code></pre></div>This command will return a list of all keys stored in the currently selected database.</li>
+</ol>
+<h4 id="-get-key-information">📝 Get Key Information</h4>
+<ol>
+<li><strong>Get detailed information about a specific key</strong> using the <code>TYPE</code> and <code>TTL</code> commands:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">TYPE your-key-name
+</span></span><span class="line"><span class="cl">TTL your-key-name
+</span></span></code></pre></div><ul>
+<li><code>TYPE</code> returns the data type of the key (e.g., string, list, set).</li>
+<li><code>TTL</code> returns the remaining time to live of a key that has a timeout, or <code>-1</code> if the key does not have a timeout.</li>
+</ul>
+</li>
+</ol>
+<h4 id="-delete-a-specific-key">🗑️ Delete a Specific Key</h4>
+<ol>
+<li><strong>Delete the key</strong> using the <code>DEL</code> command:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">DEL your-key-name
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="-delete-all-keys">🧹 Delete All Keys</h4>
+<ol>
+<li>
+<p><strong>Delete all keys</strong> in the currently selected database using the <code>FLUSHDB</code> command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FLUSHDB
+</span></span></code></pre></div><p>This will remove all keys from the currently selected database.</p>
+</li>
+<li>
+<p><strong>Delete all keys in all databases</strong> using the <code>FLUSHALL</code> command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FLUSHALL
+</span></span></code></pre></div><p>This will remove all keys from all databases.</p>
+</li>
+</ol>
+<h3 id="-interacting-with-mongodb">🟢 Interacting with MongoDB</h3>
+<h4 id="-determine-the-actual-name-of-your-database">🔎 Determine the Actual Name of Your Database</h4>
+<ol>
+<li>
+<p><strong>Ensure your MongoDB container is running</strong> by using Docker Compose:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose up -d
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Connect to the MongoDB container</strong> using the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose <span class="nb">exec</span> mongo mongo
+</span></span></code></pre></div><p>Replace <code>mongo</code> with the name of your MongoDB service defined in your <code>docker-compose.yml</code> file.</p>
+</li>
+<li>
+<p><strong>List all databases</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">show dbs
+</span></span></code></pre></div><p>This command will display a list of all databases on your MongoDB server along with their sizes.</p>
+<p><strong>Example Output</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">&gt; show dbs
+</span></span><span class="line"><span class="cl">admin       0.000GB
+</span></span><span class="line"><span class="cl">config      0.000GB
+</span></span><span class="line"><span class="cl"><span class="nb">local</span>       0.000GB
+</span></span><span class="line"><span class="cl">exampleDB   0.001GB
+</span></span></code></pre></div><p>In this example, <code>exampleDB</code> is the name of one of the databases.</p>
+</li>
+</ol>
+<h4 id="-select-and-work-with-a-database">📂 Select and Work with a Database</h4>
+<p>Once you know the name of your database, you can select it using the <code>use</code> command:</p>
+<ol>
+<li><strong>Select the database</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">use exampleDB
+</span></span></code></pre></div>Replace <code>exampleDB</code> with the actual name of your database.</li>
+</ol>
+<h4 id="-list-collections-in-a-database">📋 List Collections in a Database</h4>
+<p>After selecting the database, you can list all collections within it:</p>
+<ol>
+<li>
+<p><strong>List all collections</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">show collections
+</span></span></code></pre></div><p>This will display all collections within the selected database.</p>
+<p><strong>Example Output</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">users
+</span></span><span class="line"><span class="cl">orders
+</span></span><span class="line"><span class="cl">products
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="-delete-all-collections-or-specific-collections">🗑️ Delete All Collections or Specific Collections</h4>
+<h5 id="-delete-all-collections">🗑️ Delete All Collections</h5>
+<ol>
+<li><strong>Drop the entire database</strong> (this will delete all collections and documents within it):
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">db.dropDatabase<span class="o">()</span>
+</span></span></code></pre></div>This command will remove the entire database, including all collections and their documents.</li>
+</ol>
+<h5 id="-delete-specific-collections">🗑️ Delete Specific Collections</h5>
+<ol>
+<li><strong>Drop a specific collection</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">db.your-collection-name.drop<span class="o">()</span>
+</span></span></code></pre></div>Replace `your-colle&hellip;</li>
+</ol></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2024-06-04&#32;16:57:31>Updated on 04-06-2024</span>
+      </div>
+      <div class="post-info-license"></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-hashtags="redis,mongo,database"><i class="fab fa-twitter fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/posts/redis-mongo-database/" data-hashtag="redis"><i class="fab fa-facebook-square fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-web><i class="fab fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://example.org/posts/redis-mongo-database/" data-description="redis &amp; mongo "><i class="fab fa-pinterest fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Tumblr" data-sharer="tumblr" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-caption="redis &amp; mongo " data-tags="redis,mongo,database"><i class="fab fa-tumblr fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database"><i class="fab fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-description="redis &amp; mongo "><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-description="redis &amp; mongo "><i class="fab fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database"><i class="fab fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/redis/">redis</a>,&nbsp;<a href="/tags/mongo/">mongo</a>,&nbsp;<a href="/tags/database/">database</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/rsshub-ttrss-freshrss/" class="prev" rel="prev" title="Install rsshub ,freshrss and ttrss in Debian"><i class="fas fa-angle-left fa-fw"></i>Install rsshub ,freshrss and ttrss in Debian</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreffer">Disqus</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a
+  href="/"
+  
+  
+  
+  
+  
+  
+></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+      <i class="fas fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+      <i class="fas fa-comment fa-fw"></i>
+    </a>
+  </div><div id="mask"></div>
+</div><script type="text/javascript" src="https://ericvlog.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{},"enablePWA":true,"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script></body>
+</html>

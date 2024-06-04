@@ -2,16 +2,20 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>http://example.org/categories/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/categories/computer/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/categories/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/categories/computer/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/database/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/mongo/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/posts/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/redis/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/posts/redis-mongo-database/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/freshrss/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/rsshub-ttrss-freshrss/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/categories/internet/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/posts/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/rss/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/rsshub/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/ttrss/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/automount/</loc><lastmod>2024-05-20T09:24:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/debian/</loc><lastmod>2024-05-20T09:24:50&#43;08:00</lastmod></url><url>
@@ -48,7 +52,6 @@
       <loc>http://example.org/categories/speculation/</loc><lastmod>2022-05-12T22:58:03&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/speculation-principle/</loc><lastmod>2022-05-12T22:58:03&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/stocks/</loc><lastmod>2022-05-12T22:58:03&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/database/</loc><lastmod>2022-05-12T22:21:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/postgre/</loc><lastmod>2022-05-12T22:21:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/tubesync/</loc><lastmod>2022-05-12T22:21:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/tubesync-and-postgresql-guide/</loc><lastmod>2022-05-12T22:21:50&#43;08:00</lastmod></url><url>
