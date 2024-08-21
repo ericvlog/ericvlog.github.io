@@ -61,17 +61,6 @@
 <h2 id="-conclusion">✅ Conclusion</h2>
 <p>By adding multiple registry mirrors, you can significantly improve the speed and reliability of Docker image pulls. This is especially useful in environments with varying network conditions or high demand on the Docker Hub.</p>]]></description>
 </item><item>
-  <title>Guide to Moving the Default /var/lib/docker to Another Directory on Linux</title>
-  <link>http://example.org/posts/relocating-the-docker-root-directory/</link>
-  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/relocating-the-docker-root-directory/</guid>
-  <description><![CDATA[📦 Guide to Moving the Default /var/lib/docker to Another Directory on Linux 1. 🚫 Stop the Docker Service First, stop the Docker service:
-sudo systemctl stop docker If you see a warning like this:
-Warning: Stopping docker.service, but it can still be activated by: docker.socket Then stop the Docker socket as well:
-sudo systemctl stop docker.socket To ensure that the Docker daemon is completely stopped, you can run:
-docker ps -a If the command does not return any running containers, the daemon is stopped.]]></description>
-</item><item>
   <title>Armbian linux as nas</title>
   <link>http://example.org/posts/linux-nas-samba/</link>
   <pubDate>Fri, 13 May 2022 01:11:58 &#43;0800</pubDate>
