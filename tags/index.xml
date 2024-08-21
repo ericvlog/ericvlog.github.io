@@ -53,6 +53,13 @@
   <guid>http://example.org/tags/freshrss/</guid>
   <description><![CDATA[]]></description>
 </item><item>
+  <title>relocate</title>
+  <link>http://example.org/tags/relocate/</link>
+  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/relocate/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>rss</title>
   <link>http://example.org/tags/rss/</link>
   <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
@@ -65,13 +72,6 @@
   <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/rsshub/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>ttrss</title>
-  <link>http://example.org/tags/ttrss/</link>
-  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/ttrss/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>

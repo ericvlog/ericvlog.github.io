@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>relocate - Tag - Eric vlog</title>
+    <link>http://example.org/tags/relocate/</link>
+    <description>relocate - Tag - Eric vlog</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 31 May 2024 13:55:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/relocate/" rel="self" type="application/rss+xml" /><item>
+  <title>Guide to Moving the Default /var/lib/docker to Another Directory on Linux</title>
+  <link>http://example.org/posts/relocating-the-docker-root-directory/</link>
+  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/relocating-the-docker-root-directory/</guid>
+  <description><![CDATA[📦 Guide to Moving the Default /var/lib/docker to Another Directory on Linux 1. 🚫 Stop the Docker Service First, stop the Docker service:
+sudo systemctl stop docker If you see a warning like this:
+Warning: Stopping docker.service, but it can still be activated by: docker.socket Then stop the Docker socket as well:
+sudo systemctl stop docker.socket To ensure that the Docker daemon is completely stopped, you can run:
+docker ps -a If the command does not return any running containers, the daemon is stopped.]]></description>
+</item></channel>
+</rss>
