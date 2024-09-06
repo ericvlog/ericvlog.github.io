@@ -249,7 +249,7 @@
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/adguard-home-dns-on-debian-armbian/">Adguard Home Dns on Debian Armbian</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
-      Eric</span></span>&nbsp;<span class="post-publish" title='2024-09-06 20:27:24'>published on <time datetime="06-09-2024">06-09-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div><div class="content"><h1 id="guide-to-change-dns-for-adguard-home-19216815-on-debianarmbian-and-apply-to-docker-">Guide to Change DNS for AdGuard Home (192.168.1.5) on Debian/Armbian and Apply to Docker 🐋</h1>
+      Eric</span></span>&nbsp;<span class="post-publish" title='2024-09-05 20:27:24'>published on <time datetime="05-09-2024">05-09-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div><div class="content"><h1 id="guide-to-change-dns-for-adguard-home-19216815-on-debianarmbian-and-apply-to-docker-">Guide to Change DNS for AdGuard Home (192.168.1.5) on Debian/Armbian and Apply to Docker 🐋</h1>
 <h2 id="step-1-configure-adguard-home-dns-settings-">Step 1: Configure AdGuard Home DNS Settings 🌐</h2>
 <ol>
 <li>
@@ -296,21 +296,7 @@
 <li><strong>Save and exit:</strong><br>
 Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</li>
 </ol>
-<h3 id="method-2-using-network-configuration">Method 2: Using Network Configuration</h3>
-<h4 id="if-using-networkmanager">If using <code>NetworkManager</code>:</h4>
-<ol>
-<li><strong>Open Terminal.</strong></li>
-<li><strong>Edit network settings:</strong>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nm-connection-editor
-</span></span></code></pre></div></li>
-<li><strong>Select your connection and click &ldquo;Edit.&rdquo;</strong></li>
-<li><strong>Go to &ldquo;IPv4 Settings.&rdquo;</strong></li>
-<li><strong>Change &ldquo;Method&rdquo; to &ldquo;Automatic (DHCP) addresses only&rdquo; or &ldquo;Manual.&rdquo;</strong></li>
-<li><strong>In the &ldquo;DNS servers&rdquo; field, enter:</strong>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">192.168.1.5
-</span></span></code></pre></div></li>
-<li><strong>Save and exit.</strong></li>
-</ol>
+<h3 id="method-2-using-etcnetworkinterfaces">Method 2: Using /etc/network/interfaces:</h3>
 <h4 id="if-using-etcnetworkinterfaces">If using <code>/etc/network/interfaces</code>:</h4>
 <ol>
 <li><strong>Open Terminal.</strong></li>
@@ -332,15 +318,20 @@ Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</l
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/docker/daemon.json
 </span></span></code></pre></div></li>
 <li>
-<p><strong>Add the AdGuard Home IP:</strong></p>
+<p><strong>Add or modify the following line if you have changed the Docker default folder before:</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;data-root&#34;</span><span class="p">:</span> <span class="s2">&#34;/mnt/docker&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;dns&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;192.168.1.5&#34;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>If the file already has content, just add the <code>&quot;dns&quot;</code> line within the existing JSON structure.</p>
+</span></span></code></pre></div><ul>
+<li>Make sure to include the <code>&quot;dns&quot;</code> setting if you want to configure DNS as well.</li>
+<li>The <code>&quot;data-root&quot;: &quot;/mnt/docker&quot;</code> specifies the location where you changed the Docker data directory.</li>
+</ul>
 </li>
 <li>
 <p><strong>Save and exit:</strong><br>
 Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</p>
+<p>If docker have</p>
 </li>
 <li>
 <p><strong>Restart Docker:</strong></p>
