@@ -53,13 +53,6 @@
   <guid>http://example.org/tags/freshrss/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>rss</title>
-  <link>http://example.org/tags/rss/</link>
-  <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/rss/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
   <title>rsshub</title>
   <link>http://example.org/tags/rsshub/</link>
   <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
@@ -72,6 +65,13 @@
   <pubDate>Fri, 31 May 2024 13:55:50 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/ttrss/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>automount</title>
+  <link>http://example.org/tags/automount/</link>
+  <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/automount/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
