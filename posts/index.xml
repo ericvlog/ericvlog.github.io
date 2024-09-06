@@ -3,7 +3,121 @@
     <title>All Posts - Eric vlog</title>
     <link>http://example.org/posts/</link>
     <description>All Posts | Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 21 Aug 2024 13:55:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 06 Sep 2024 20:27:24 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Adguard Home Dns on Debian Armbian</title>
+  <link>http://example.org/posts/adguard-home-dns-on-debian-armbian/</link>
+  <pubDate>Fri, 06 Sep 2024 20:27:24 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/adguard-home-dns-on-debian-armbian/</guid>
+  <description><![CDATA[<h1 id="guide-to-change-dns-for-adguard-home-19216815-on-debianarmbian-and-apply-to-docker-">Guide to Change DNS for AdGuard Home (192.168.1.5) on Debian/Armbian and Apply to Docker 🐋</h1>
+<h2 id="step-1-configure-adguard-home-dns-settings-">Step 1: Configure AdGuard Home DNS Settings 🌐</h2>
+<ol>
+<li>
+<p><strong>Access AdGuard Home Dashboard:</strong></p>
+<ul>
+<li>Open a web browser and go to:<br>
+<code>http://192.168.1.5:3000</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Log in to your account.</strong></p>
+</li>
+<li>
+<p><strong>Navigate to DNS Settings:</strong></p>
+<ul>
+<li>Go to <strong>Settings</strong> &gt; <strong>DNS settings</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure DNS Forwarding:</strong></p>
+<ul>
+<li>Add public DNS servers (if needed), e.g.,
+<ul>
+<li>Primary: <code>8.8.8.8</code> (Google)</li>
+<li>Secondary: <code>1.1.1.1</code> (Cloudflare)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Save your changes.</strong></p>
+</li>
+</ol>
+<h2 id="step-2-change-dns-on-debianarmbian-">Step 2: Change DNS on Debian/Armbian 🖥️</h2>
+<h3 id="method-1-edit-etcresolvconf">Method 1: Edit <code>/etc/resolv.conf</code></h3>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit the resolv.conf file:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/resolv.conf
+</span></span></code></pre></div></li>
+<li><strong>Add the following line:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">nameserver 192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit:</strong><br>
+Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</li>
+</ol>
+<h3 id="method-2-using-network-configuration">Method 2: Using Network Configuration</h3>
+<h4 id="if-using-networkmanager">If using <code>NetworkManager</code>:</h4>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit network settings:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nm-connection-editor
+</span></span></code></pre></div></li>
+<li><strong>Select your connection and click &ldquo;Edit.&rdquo;</strong></li>
+<li><strong>Go to &ldquo;IPv4 Settings.&rdquo;</strong></li>
+<li><strong>Change &ldquo;Method&rdquo; to &ldquo;Automatic (DHCP) addresses only&rdquo; or &ldquo;Manual.&rdquo;</strong></li>
+<li><strong>In the &ldquo;DNS servers&rdquo; field, enter:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit.</strong></li>
+</ol>
+<h4 id="if-using-etcnetworkinterfaces">If using <code>/etc/network/interfaces</code>:</h4>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit the interfaces file:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/network/interfaces
+</span></span></code></pre></div></li>
+<li><strong>Add or modify the DNS setting:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">dns-nameservers 192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit.</strong></li>
+<li><strong>Restart networking service:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart networking
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="step-3-configure-docker-to-use-adguard-home-dns-">Step 3: Configure Docker to Use AdGuard Home DNS 🐳</h2>
+<ol>
+<li>
+<p><strong>Edit Docker daemon configuration:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/docker/daemon.json
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Add the AdGuard Home IP:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dns&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;192.168.1.5&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>If the file already has content, just add the <code>&quot;dns&quot;</code> line within the existing JSON structure.</p>
+</li>
+<li>
+<p><strong>Save and exit:</strong><br>
+Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</p>
+</li>
+<li>
+<p><strong>Restart Docker:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart docker
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="step-4-verify-dns-settings-in-docker-containers-">Step 4: Verify DNS Settings in Docker Containers ✅</h2>
+<ol>
+<li><strong>Run a test container:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --rm busybox nslookup google.com
+</span></span></code></pre></div></li>
+<li><strong>Check the output:</strong><br>
+Ensure it shows <code>192.168.1.5</code> as the DNS server.</li>
+</ol>
+<h2 id="conclusion-">Conclusion 🎉</h2>
+<p>You have successfully changed the DNS settings for AdGuard Home and applied them to your Debian/Armbian system and Docker! Now enjoy enhanced ad-blocking and DNS filtering!</p>]]></description>
+</item><item>
   <title>Guide to Moving the Default /var/lib/docker to Another Directory on Linux</title>
   <link>http://example.org/posts/relocating-the-docker-root-directory/</link>
   <pubDate>Wed, 21 Aug 2024 13:55:50 &#43;0800</pubDate>
@@ -522,18 +636,5 @@ sudo nano /etc/systemd/system/rclone-mount.service Add the following content to 
 <p>的意志在引领”这个原则 如果你愿意超越所有认知 那么你就能体悟到我想要告诉你的 只有那时你才能亲自体会到 仅仅只是存在 就蕴含深邃的奥妙和无穷的美丽 生命还存在另外一种可能 在你内心深处的寂静当中 有一些神圣的、高深莫测的东西 超乎概念，超乎信条 超乎局限性思维和所有选择</p>
 <p>它不是通过技巧、仪式或练习而获得 无所谓“如何”得到它。 没有方法，没有通向那条道路的道路 就像禅宗所说 只是去发觉你出生之前的本来面目 并非要给自己增加某种东西 而是要成为一束光照亮你自己 驱散“自我”的迷失 只有在那个超乎名相的神秘之处休憩 生命才能够获得圆满 内心才能够永久安宁。</p>
 <hr>]]></description>
-</item><item>
-  <title>三摩地影片第1部 - “幻象，自我的迷失</title>
-  <link>http://example.org/posts/samadhi-part-1-maya-the-illusion-of-the-self/</link>
-  <pubDate>Tue, 22 Aug 2023 23:01:04 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/samadhi-part-1-maya-the-illusion-of-the-self/</guid>
-  <description><![CDATA[三摩地影片第1部 - “幻象，自我的迷失” “三摩地” “三摩地”是一个古老的梵语词汇，现在没有与之含义相同的词了。 要制作一部关于“三摩地”的影片，会遇到一个重大的挑战。
-“三摩地”指的是某种在思维层面无法表达的东西。 这部影片只是我自己心路历程的展示。 目的不是要向你传授“三摩地”， 也不是要给你洗脑， 而是要启发你去直面你的本性。 现在，“三摩地”比以往任何时候都更重要。 在现在这个时代，我们不仅忘记了“三摩地”， 而且已经忘记了 我们曾忘记了什么。 这种“忘记”是一种幻象，是自我的迷失。
-身为人类，我们大多数人都淹没在日常生活中， 很少想过我们是谁， 我们为什么来到这里，我们要去往哪里？ 我们大多数人都未曾体悟“真我”、灵魂， 或是佛陀所说的“了知”， 它超越了各种名相，超越了思维。 于是，我们就把“自我”局限于我们的身体。 有意或无意地，我们会害怕我们这个肉身， 也就是我们所理解的那个“我”， 会死亡。 在当今世界，很多人进行宗教或精神的练习， 借用瑜伽、祈祷、冥想、颂咒或其它仪式， 这些人绝大多数是在进行
-某种局限性的技能练习。 也就是说他们只是在构建“自我”。 探寻和练习并不是问题所在，认为自己已经在这些外在形式上找到了答案 才是问题所在。 大部分的精神追求在形式上与随处可见的病态想法 并无二致。 这是内心深处的一种焦虑。 不只要生而为人，更要像人一样活着。 “自我”在建构时想要更多金钱、 更多权力、更多的爱、更多的一切。 那些走在所谓精神追求道路上的人也想要更精神化、更清醒、更淡然、 更平和、更觉醒。 你观看此影片的危险之处就是你在思维上也想要得到“三摩地”，
-更危险的是，你认为自己已经获得了“三摩地”。 每当你想要得到什么东西的时候， 就可以确定这是“自我建构”在起作用。 三摩地不是要帮你得到或增加什么。 要体悟到三摩地，就要在你死亡之前先学会死亡。 生和死，如同阴和阳，是一个不可分割的连续体。 持续地进行，没有开始，也没有结束。 当我们拒绝死亡，也就拒绝了生存。 当你直接体验到你到底是谁，也就不会再害怕生或死。 我们的社会和文化告诉我们自己是谁，同时，
-我们也在内心深处无意识中成了那些生理性的渴望或 厌恶的奴隶，它控制着我们如何选择。 自我构建只不过是一种不断重复的冲动， 也就是一种趋势，我们的精神一旦选择了一条路， 就不断去重复那条路， 不论它对我们的机体是有利还是有害。 我们的记忆或意识有无数层级，盘旋再盘旋。 当你的知觉认同了这种意识或自我建构， 它就让你陷入了社会制约， 或者说是一个矩阵。 我们可以意识到“自我”的某些方面， 但实际上却是那些无意识的 古老的路线，那些原始的生存恐惧， 在驱动着整个矩阵运转。
-人们无休止的追求快乐和躲避痛苦的生存模式， 演变为病态的行为&hellip;我们的工作&hellip;我们的关系&hellip; 我们的信仰，我们的思想， 以及我们的整个生存方式。 就像牛一样，大多数人都在被动的奴役中生存和死亡， 把他们的生命局限在矩阵之中。 我们生活在狭隘的模式中。 生活经常充斥着巨大的痛苦， 但我们从来没有想过，其实我们可以]]></description>
 </item></channel>
 </rss>

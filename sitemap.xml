@@ -2,14 +2,19 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>http://example.org/categories/</loc><lastmod>2024-08-21T13:55:50&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/adguard-home/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/posts/adguard-home-dns-on-debian-armbian/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/armbian/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/categories/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/categories/computer/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/debian/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/dns/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/docker/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/posts/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/</loc><lastmod>2024-09-06T20:27:24&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/compose/</loc><lastmod>2024-08-21T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/categories/computer/</loc><lastmod>2024-08-21T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/docker/</loc><lastmod>2024-08-21T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/</loc><lastmod>2024-08-21T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/relocating-the-docker-root-directory/</loc><lastmod>2024-08-21T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/posts/</loc><lastmod>2024-08-21T13:55:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/</loc><lastmod>2024-08-21T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/images/</loc><lastmod>2024-06-06T00:39:01&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/speeding-up-docker/</loc><lastmod>2024-06-06T00:39:01&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/database/</loc><lastmod>2024-06-04T16:57:31&#43;08:00</lastmod></url><url>
@@ -22,7 +27,6 @@
       <loc>http://example.org/tags/rsshub/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/ttrss/</loc><lastmod>2024-05-31T13:55:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/automount/</loc><lastmod>2024-05-20T09:24:50&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/debian/</loc><lastmod>2024-05-20T09:24:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/linux/</loc><lastmod>2024-05-20T09:24:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/rclone/</loc><lastmod>2024-05-20T09:24:50&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/rclone-automount-linux/</loc><lastmod>2024-05-20T09:24:50&#43;08:00</lastmod></url><url>

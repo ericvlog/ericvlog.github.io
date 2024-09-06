@@ -1,9 +1,123 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>docker - Tag - Eric vlog</title>
+    <title>Docker - Tag - Eric vlog</title>
     <link>http://example.org/tags/docker/</link>
-    <description>docker - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 21 Aug 2024 13:55:50 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/docker/" rel="self" type="application/rss+xml" /><item>
+    <description>Docker - Tag - Eric vlog</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 06 Sep 2024 20:27:24 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/docker/" rel="self" type="application/rss+xml" /><item>
+  <title>Adguard Home Dns on Debian Armbian</title>
+  <link>http://example.org/posts/adguard-home-dns-on-debian-armbian/</link>
+  <pubDate>Fri, 06 Sep 2024 20:27:24 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/adguard-home-dns-on-debian-armbian/</guid>
+  <description><![CDATA[<h1 id="guide-to-change-dns-for-adguard-home-19216815-on-debianarmbian-and-apply-to-docker-">Guide to Change DNS for AdGuard Home (192.168.1.5) on Debian/Armbian and Apply to Docker 🐋</h1>
+<h2 id="step-1-configure-adguard-home-dns-settings-">Step 1: Configure AdGuard Home DNS Settings 🌐</h2>
+<ol>
+<li>
+<p><strong>Access AdGuard Home Dashboard:</strong></p>
+<ul>
+<li>Open a web browser and go to:<br>
+<code>http://192.168.1.5:3000</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Log in to your account.</strong></p>
+</li>
+<li>
+<p><strong>Navigate to DNS Settings:</strong></p>
+<ul>
+<li>Go to <strong>Settings</strong> &gt; <strong>DNS settings</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure DNS Forwarding:</strong></p>
+<ul>
+<li>Add public DNS servers (if needed), e.g.,
+<ul>
+<li>Primary: <code>8.8.8.8</code> (Google)</li>
+<li>Secondary: <code>1.1.1.1</code> (Cloudflare)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Save your changes.</strong></p>
+</li>
+</ol>
+<h2 id="step-2-change-dns-on-debianarmbian-">Step 2: Change DNS on Debian/Armbian 🖥️</h2>
+<h3 id="method-1-edit-etcresolvconf">Method 1: Edit <code>/etc/resolv.conf</code></h3>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit the resolv.conf file:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/resolv.conf
+</span></span></code></pre></div></li>
+<li><strong>Add the following line:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">nameserver 192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit:</strong><br>
+Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</li>
+</ol>
+<h3 id="method-2-using-network-configuration">Method 2: Using Network Configuration</h3>
+<h4 id="if-using-networkmanager">If using <code>NetworkManager</code>:</h4>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit network settings:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nm-connection-editor
+</span></span></code></pre></div></li>
+<li><strong>Select your connection and click &ldquo;Edit.&rdquo;</strong></li>
+<li><strong>Go to &ldquo;IPv4 Settings.&rdquo;</strong></li>
+<li><strong>Change &ldquo;Method&rdquo; to &ldquo;Automatic (DHCP) addresses only&rdquo; or &ldquo;Manual.&rdquo;</strong></li>
+<li><strong>In the &ldquo;DNS servers&rdquo; field, enter:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit.</strong></li>
+</ol>
+<h4 id="if-using-etcnetworkinterfaces">If using <code>/etc/network/interfaces</code>:</h4>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit the interfaces file:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/network/interfaces
+</span></span></code></pre></div></li>
+<li><strong>Add or modify the DNS setting:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">dns-nameservers 192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit.</strong></li>
+<li><strong>Restart networking service:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart networking
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="step-3-configure-docker-to-use-adguard-home-dns-">Step 3: Configure Docker to Use AdGuard Home DNS 🐳</h2>
+<ol>
+<li>
+<p><strong>Edit Docker daemon configuration:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/docker/daemon.json
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Add the AdGuard Home IP:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dns&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;192.168.1.5&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>If the file already has content, just add the <code>&quot;dns&quot;</code> line within the existing JSON structure.</p>
+</li>
+<li>
+<p><strong>Save and exit:</strong><br>
+Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</p>
+</li>
+<li>
+<p><strong>Restart Docker:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart docker
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="step-4-verify-dns-settings-in-docker-containers-">Step 4: Verify DNS Settings in Docker Containers ✅</h2>
+<ol>
+<li><strong>Run a test container:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --rm busybox nslookup google.com
+</span></span></code></pre></div></li>
+<li><strong>Check the output:</strong><br>
+Ensure it shows <code>192.168.1.5</code> as the DNS server.</li>
+</ol>
+<h2 id="conclusion-">Conclusion 🎉</h2>
+<p>You have successfully changed the DNS settings for AdGuard Home and applied them to your Debian/Armbian system and Docker! Now enjoy enhanced ad-blocking and DNS filtering!</p>]]></description>
+</item><item>
   <title>Guide to Moving the Default /var/lib/docker to Another Directory on Linux</title>
   <link>http://example.org/posts/relocating-the-docker-root-directory/</link>
   <pubDate>Wed, 21 Aug 2024 13:55:50 &#43;0800</pubDate>

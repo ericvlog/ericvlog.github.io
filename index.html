@@ -247,6 +247,119 @@
 ><i class="fas fa-rss fa-fw"></i>
     </a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/adguard-home-dns-on-debian-armbian/">Adguard Home Dns on Debian Armbian</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
+      Eric</span></span>&nbsp;<span class="post-publish" title='2024-09-06 20:27:24'>published on <time datetime="06-09-2024">06-09-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div><div class="content"><h1 id="guide-to-change-dns-for-adguard-home-19216815-on-debianarmbian-and-apply-to-docker-">Guide to Change DNS for AdGuard Home (192.168.1.5) on Debian/Armbian and Apply to Docker 🐋</h1>
+<h2 id="step-1-configure-adguard-home-dns-settings-">Step 1: Configure AdGuard Home DNS Settings 🌐</h2>
+<ol>
+<li>
+<p><strong>Access AdGuard Home Dashboard:</strong></p>
+<ul>
+<li>Open a web browser and go to:<br>
+<code>http://192.168.1.5:3000</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Log in to your account.</strong></p>
+</li>
+<li>
+<p><strong>Navigate to DNS Settings:</strong></p>
+<ul>
+<li>Go to <strong>Settings</strong> &gt; <strong>DNS settings</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure DNS Forwarding:</strong></p>
+<ul>
+<li>Add public DNS servers (if needed), e.g.,
+<ul>
+<li>Primary: <code>8.8.8.8</code> (Google)</li>
+<li>Secondary: <code>1.1.1.1</code> (Cloudflare)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Save your changes.</strong></p>
+</li>
+</ol>
+<h2 id="step-2-change-dns-on-debianarmbian-">Step 2: Change DNS on Debian/Armbian 🖥️</h2>
+<h3 id="method-1-edit-etcresolvconf">Method 1: Edit <code>/etc/resolv.conf</code></h3>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit the resolv.conf file:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/resolv.conf
+</span></span></code></pre></div></li>
+<li><strong>Add the following line:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">nameserver 192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit:</strong><br>
+Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</li>
+</ol>
+<h3 id="method-2-using-network-configuration">Method 2: Using Network Configuration</h3>
+<h4 id="if-using-networkmanager">If using <code>NetworkManager</code>:</h4>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit network settings:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nm-connection-editor
+</span></span></code></pre></div></li>
+<li><strong>Select your connection and click &ldquo;Edit.&rdquo;</strong></li>
+<li><strong>Go to &ldquo;IPv4 Settings.&rdquo;</strong></li>
+<li><strong>Change &ldquo;Method&rdquo; to &ldquo;Automatic (DHCP) addresses only&rdquo; or &ldquo;Manual.&rdquo;</strong></li>
+<li><strong>In the &ldquo;DNS servers&rdquo; field, enter:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit.</strong></li>
+</ol>
+<h4 id="if-using-etcnetworkinterfaces">If using <code>/etc/network/interfaces</code>:</h4>
+<ol>
+<li><strong>Open Terminal.</strong></li>
+<li><strong>Edit the interfaces file:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/network/interfaces
+</span></span></code></pre></div></li>
+<li><strong>Add or modify the DNS setting:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">dns-nameservers 192.168.1.5
+</span></span></code></pre></div></li>
+<li><strong>Save and exit.</strong></li>
+<li><strong>Restart networking service:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart networking
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="step-3-configure-docker-to-use-adguard-home-dns-">Step 3: Configure Docker to Use AdGuard Home DNS 🐳</h2>
+<ol>
+<li>
+<p><strong>Edit Docker daemon configuration:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/docker/daemon.json
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Add the AdGuard Home IP:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dns&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;192.168.1.5&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>If the file already has content, just add the <code>&quot;dns&quot;</code> line within the existing JSON structure.</p>
+</li>
+<li>
+<p><strong>Save and exit:</strong><br>
+Press <code>CTRL + X</code>, then <code>Y</code>, and hit <code>Enter</code>.</p>
+</li>
+<li>
+<p><strong>Restart Docker:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart docker
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="step-4-verify-dns-settings-in-docker-containers-">Step 4: Verify DNS Settings in Docker Containers ✅</h2>
+<ol>
+<li><strong>Run a test container:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --rm busybox nslookup google.com
+</span></span></code></pre></div></li>
+<li><strong>Check the output:</strong><br>
+Ensure it shows <code>192.168.1.5</code> as the DNS server.</li>
+</ol>
+<h2 id="conclusion-">Conclusion 🎉</h2>
+<p>You have successfully changed the DNS settings for AdGuard Home and applied them to your Debian/Armbian system and Docker! Now enjoy enhanced ad-blocking and DNS filtering!</p></div><div class="post-footer">
+    <a href="/posts/adguard-home-dns-on-debian-armbian/">Read More</a><div class="post-tags">
+        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/armbian/">Armbian</a>,&nbsp;<a href="/tags/dns/">DNS</a>,&nbsp;<a href="/tags/adguard-home/">AdGuard Home</a>,&nbsp;<a href="/tags/debian/">Debian</a>,&nbsp;<a href="/tags/docker/">Docker</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/relocating-the-docker-root-directory/">Guide to Moving the Default /var/lib/docker to Another Directory on Linux</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
       Eric</span></span>&nbsp;<span class="post-publish" title='2024-08-21 13:55:50'>published on <time datetime="21-08-2024">21-08-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div><div class="content">📦 Guide to Moving the Default /var/lib/docker to Another Directory on Linux 1. 🚫 Stop the Docker Service First, stop the Docker service:
@@ -255,7 +368,7 @@ Warning: Stopping docker.service, but it can still be activated by: docker.socke
 sudo systemctl stop docker.socket To ensure that the Docker daemon is completely stopped, you can run:
 docker ps -a If the command does not return any running containers, the daemon is stopped.</div><div class="post-footer">
     <a href="/posts/relocating-the-docker-root-directory/">Read More</a><div class="post-tags">
-        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/docker/">docker</a>,&nbsp;<a href="/tags/compose/">compose</a></div></div>
+        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/docker/">Docker</a>,&nbsp;<a href="/tags/compose/">compose</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/speeding-up-docker/">Speeding Up Docker Image Pulls with Multiple Registry Mirrors</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
@@ -311,7 +424,7 @@ docker ps -a If the command does not return any running containers, the daemon i
 <h2 id="-conclusion">✅ Conclusion</h2>
 <p>By adding multiple registry mirrors, you can significantly improve the speed and reliability of Docker image pulls. This is especially useful in environments with varying network conditions or high demand on the Docker Hub.</p></div><div class="post-footer">
     <a href="/posts/speeding-up-docker/">Read More</a><div class="post-tags">
-        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/docker/">docker</a>,&nbsp;<a href="/tags/images/">images</a>,&nbsp;<a href="/tags/compose/">compose</a></div></div>
+        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/docker/">Docker</a>,&nbsp;<a href="/tags/images/">images</a>,&nbsp;<a href="/tags/compose/">compose</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/redis-mongo-database/">Redis Mongo Database</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
@@ -333,95 +446,7 @@ Create a systemd service unit file: Open a terminal and create a new service uni
 sudo nano /etc/systemd/system/rclone-mount.service Add the following content to the file:
 [Unit] Description=RClone Mount Service After=network-online.</div><div class="post-footer">
     <a href="/posts/rclone-automount-linux/">Read More</a><div class="post-tags">
-        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/rclone/">rclone</a>,&nbsp;<a href="/tags/automount/">automount</a>,&nbsp;<a href="/tags/debian/">debian</a>,&nbsp;<a href="/tags/linux/">linux</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/hugo-blog-guide/">Hugo Blog on GitHub guide</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
-      Eric</span></span>&nbsp;<span class="post-publish" title='2024-05-18 18:06:04'>published on <time datetime="18-05-2024">18-05-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/blog/"><i class="far fa-folder fa-fw"></i>&nbsp;blog</a></span></div><div class="content"><h1 id="creating-a-blog-with-hugo-and-github-pages-on-windows-">Creating a Blog with Hugo and GitHub Pages on Windows 📝💻</h1>
-<p>I created this blog using Hugo and GitHub Pages on Windows. Hugo is a static site generator that is very fast and written in Go language. GitHub Pages lets you host the static sites created using Hugo.</p>
-<h2 id="installing-hugo-">Installing Hugo 🚀</h2>
-<p>First, install Hugo on Windows. I used the Chocolatey package manager to install Hugo. There are two versions available, and I installed the extended version as it is required if you plan to customize the themes you will be using.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">choco install hugo-extended -y
-</span></span></code></pre></div><p>After installation, check the Hugo version to confirm if it was installed successfully.</p>
-<h2 id="git-repositories-and-folder-structure-">Git Repositories and Folder Structure 📂</h2>
-<p>Now that we have installed Hugo, let&rsquo;s create our blog. Let&rsquo;s discuss the Git repositories and folder structure. I will create two Git repositories:</p>
-<ol>
-<li><strong>Development repository</strong> - This will contain all the Hugo files and the posts I create in Markdown.</li>
-<li><strong>GitHub Pages repository</strong> - This will contain the output of Hugo, which will be the static sites for my blog.</li>
-</ol>
-<p>Since I have two Git repositories, I will have two folders for the same. First, I will create a folder <code>blog</code> where the two folders will be. Inside the <code>blog</code> folder, use Hugo to create a new site <code>jsjblog</code>. The <code>jsjblog</code> folder will be linked to the Git development repository. Then the output of Hugo, which will be static sites, will be stored in the <code>jsjblog_site</code> folder which I created in later steps.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir blog
-</span></span><span class="line"><span class="cl">hugo new site jsjblog
-</span></span></code></pre></div><p>If you go inside the <code>jsjblog</code> folder, you will find all the Hugo setup files.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">archetypes
-</span></span><span class="line"><span class="cl">content
-</span></span><span class="line"><span class="cl">data
-</span></span><span class="line"><span class="cl">layouts
-</span></span><span class="line"><span class="cl">resources
-</span></span><span class="line"><span class="cl">static
-</span></span><span class="line"><span class="cl">themes
-</span></span><span class="line"><span class="cl">config.toml
-</span></span></code></pre></div><h2 id="hugo-theme-and-configtoml-file-">Hugo Theme and <code>config.toml</code> File 🎨</h2>
-<p>The <code>themes</code> folder contains all the website design details. There are many custom Hugo themes available. I have decided to use the Even theme for my blog. I will download the theme from Git instead of using <code>git clone</code> as I don’t want any other Git links in my development repository. After downloading and unzipping the theme, I pasted the contents inside the <code>themes/even</code> folder. As mentioned on the Even theme page, I copied the <code>config.toml</code> file from examples to the <code>jsjblog</code> folder and replaced the existing file. Now let&rsquo;s check our website using the command below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo server
-</span></span></code></pre></div><p>You can see the site by going to <code>http://localhost:1313/</code> as mentioned in the terminal message. Since it&rsquo;s an example website, the title, name, etc., need to be changed. These all can be changed in the <code>config.toml</code> file under <code>jsjblog</code>. After editing the <code>config.toml</code> file, once you run the Hugo server again, you see the updated website with your details.</p>
-<p>We can also edit the themes as required. As mentioned on the Even theme page, we can do many customizations to our website. I did a simple color change inside <code>themes/even/assets/sass/_variable.scss</code>. Saved the change and now you see the color change on the website.</p>
-<h2 id="create-new-blog-post-">Create New Blog Post 📝</h2>
-<p>Since there are no posts in the blog, let&rsquo;s add a new blog post. As mentioned on the Even theme page, we can create a new post using the command below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo new post/initial_post.md
-</span></span></code></pre></div><p>Note that <code>post</code> or <code>posts</code> in the command will vary based on the theme you are using.</p>
-<p>Open <code>initial_post</code> from <code>jsjblog/content/post</code> and start writing the post. At the start of the post, there will be some metadata which Hugo populates automatically. Hugo needs this metadata for creating the static sites. <code>Draft</code> in the metadata should be set to <code>false</code> once we have completed the post and are ready to publish. If it’s true, Hugo will not show the post on the website. You can add other metadata like tags, category, author, etc. These all will depend upon the type of theme you use. After creating our first post, let&rsquo;s run the Hugo server again. We can see our post on the site.</p>
-<h2 id="git-repositories-and-going-online-">Git Repositories and Going Online 🌐</h2>
-<p>Now our development of the site with our first post is completed. Let&rsquo;s create the Git repository for blog development. I created a <code>jsjblog</code> Git repository without a README file. Then I linked the <code>jsjblog</code> folder to this Git repository using the commands below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;# jsjblog&#34;</span> &gt;&gt; README.md
-</span></span><span class="line"><span class="cl">git init
-</span></span><span class="line"><span class="cl">git add README.md
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;first commit&#34;</span>
-</span></span><span class="line"><span class="cl">git branch -M main
-</span></span><span class="line"><span class="cl">git remote add origin https://github.com/jithusjacob/jsjblog.git
-</span></span><span class="line"><span class="cl">git push -u origin main
-</span></span></code></pre></div><p><strong>Attention</strong>: Use <code>git status</code> to check, then:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add --all
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;changelog&#34;</span>
-</span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></div><p>Above, instead of adding only <code>README.md</code>, I actually added all the files in the <code>jsjblog</code> folder using the command below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add --all
-</span></span></code></pre></div><p>So our development setup is saved in GitHub. As and when a new post is created, you can move the same to this GitHub repository.</p>
-<p>Now we will create the Git repository for GitHub Pages. While creating this repository, we need to ensure the repository name has the format <code>username.github.io</code> where <code>username</code> is your Git username. Here, I created the repository without a README file. Next, we will create the Hugo output folder which will have the static sites and will be linked to this repository. We can use the <code>hugo</code> command to build the output files and they will be created inside the <code>jsjblog</code> folder under a new folder called <code>public</code>. But since I want to separate the <code>jsjblog</code> folder and the output folder so that it’s easier to maintain different Git repositories, I will use the <code>-d</code> flag to give the destination of the output files.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo -d ../jsjblog_site
-</span></span></code></pre></div><p>I gave the output folder as <code>jsjblog_site</code> inside the <code>blog</code> folder. So now the <code>blog</code> folder will have two folders corresponding to the two GitHub repositories.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">jsjblog
-</span></span><span class="line"><span class="cl">jsjblog_site
-</span></span></code></pre></div><p>Let&rsquo;s link the <code>jsjblog_site</code> folder with the GitHub Pages repository so that we can finally see our blog online.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;# jithusjacob.github.io&#34;</span> &gt;&gt; README.md
-</span></span><span class="line"><span class="cl">git init
-</span></span><span class="line"><span class="cl">git add README.md
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;first commit&#34;</span>
-</span></span><span class="line"><span class="cl">git branch -M main
-</span></span><span class="line"><span class="cl">git remote add origin https://github.com/jithusjacob/jithusjacob.github.io.git
-</span></span></code></pre></div><p><strong>Attention</strong>: Use <code>git status</code> to check, then:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add --all
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;changelog&#34;</span>
-</span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></div><p>This time I did not do <code>git add .</code> as I was getting some errors. I followed the above steps, linked the Git repository to the folder, then added remaining files and moved them to the Git repository.</p>
-<p>So now my Hugo blog is ready to be accessed on <a
-  href="https://jithusjacob.github.io/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreffer"
-  
-  
-  
-  
->https://jithusjacob.github.io/</a></p>
-<p>You can also see the above steps in my YouTube video. 📹</p></div><div class="post-footer">
-    <a href="/posts/hugo-blog-guide/">Read More</a><div class="post-tags">
-        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/blog/">blog</a>,&nbsp;<a href="/tags/hugo/">hugo</a>,&nbsp;<a href="/tags/github/">GitHub</a></div></div>
+        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/rclone/">rclone</a>,&nbsp;<a href="/tags/automount/">automount</a>,&nbsp;<a href="/tags/debian/">Debian</a>,&nbsp;<a href="/tags/linux/">linux</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
           <span class="page-link">
             <a href="/">1</a>
