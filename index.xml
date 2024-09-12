@@ -179,7 +179,7 @@ docker ps -a If the command does not return any running containers, the daemon i
 <h2 id="-conclusion">✅ Conclusion</h2>
 <p>By adding multiple registry mirrors, you can significantly improve the speed and reliability of Docker image pulls. This is especially useful in environments with varying network conditions or high demand on the Docker Hub.</p>]]></description>
 </item><item>
-  <title>How to drop Redis Mongo and postgress Database</title>
+  <title>How to Drop Databases in Redis, MongoDB, and PostgreSQL</title>
   <link>http://example.org/posts/redis-mongo-database/</link>
   <pubDate>Tue, 04 Jun 2024 16:57:31 &#43;0800</pubDate>
   <author>Eric</author>
