@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title>Redis Mongo Database - Eric vlog</title><meta name="author" content=": ">
+    <title>How to drop Redis Mongo and postgress Database - Eric vlog</title><meta name="author" content=": ">
 <meta name="description" content="redis &amp; mongo " />
-<meta name="keywords" content="redis,mongo,database" /><meta itemprop="name" content="Redis Mongo Database">
+<meta name="keywords" content="redis,postgress,mongo,database" /><meta itemprop="name" content="How to drop Redis Mongo and postgress Database">
 <meta itemprop="description" content="redis &amp; mongo "><meta itemprop="datePublished" content="2024-06-04T16:57:31+08:00" />
 <meta itemprop="dateModified" content="2024-06-04T16:57:31+08:00" />
-<meta itemprop="wordCount" content="520"><meta itemprop="image" content="http://example.org/logo.png"/>
-<meta itemprop="keywords" content="redis,mongo,database," /><meta property="og:title" content="Redis Mongo Database" />
+<meta itemprop="wordCount" content="820"><meta itemprop="image" content="http://example.org/logo.png"/>
+<meta itemprop="keywords" content="redis,postgress,mongo,database," /><meta property="og:title" content="How to drop Redis Mongo and postgress Database" />
 <meta property="og:description" content="redis &amp; mongo " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/redis-mongo-database/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
-<meta name="twitter:title" content="Redis Mongo Database"/>
+<meta name="twitter:title" content="How to drop Redis Mongo and postgress Database"/>
 <meta name="twitter:description" content="redis &amp; mongo "/>
 <meta name="application-name" content="Eric vlog">
 <meta name="apple-mobile-web-app-title" content="Eric vlog"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -30,12 +30,12 @@
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Redis Mongo Database",
+    "headline": "How to drop Redis Mongo and postgress Database",
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/example.org\/posts\/redis-mongo-database\/"
-    },"genre": "posts","keywords": "redis, mongo, database","wordcount":  520 ,
+    },"genre": "posts","keywords": "redis, postgress, mongo, database","wordcount":  820 ,
     "url": "http:\/\/example.org\/posts\/redis-mongo-database\/","datePublished": "2024-06-04T16:57:31+08:00","dateModified": "2024-06-04T16:57:31+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -159,14 +159,14 @@
     
   </aside>
 
-  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">Redis Mongo Database</h1><div class="post-meta">
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">How to drop Redis Mongo and postgress Database</h1><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
       Eric</span></span>
           <span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div>
       <div class="post-meta-line"><span title=2024-06-04&#32;16:57:31>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="04-06-2024" >04-06-2024</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;520 words&nbsp;
-        <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;820 words&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -181,6 +181,28 @@
         <li><a href="#-interacting-with-mongodb">🟢 Interacting with MongoDB</a></li>
       </ul>
     </li>
+  </ul>
+
+  <ul>
+    <li><a href="#listing-postgresql-users-and-databases">Listing PostgreSQL Users and Databases</a>
+      <ul>
+        <li><a href="#step-1-access-the-postgresql-container">Step 1: Access the PostgreSQL Container</a></li>
+        <li><a href="#step-2-connect-to-postgresql">Step 2: Connect to PostgreSQL</a></li>
+        <li><a href="#step-3-list-users">Step 3: List Users</a></li>
+        <li><a href="#step-4-list-all-databases">Step 4: List All Databases</a></li>
+        <li><a href="#step-5-find-your-database-name">Step 5: Find Your Database Name</a></li>
+        <li><a href="#step-6-exit">Step 6: Exit</a></li>
+      </ul>
+    </li>
+    <li><a href="#dropping-a-postgresql-database-">Dropping a PostgreSQL Database 💔</a>
+      <ul>
+        <li><a href="#step-1-access-the-postgresql-container-1">Step 1: Access the PostgreSQL Container</a></li>
+        <li><a href="#step-2-connect-to-postgresql-1">Step 2: Connect to PostgreSQL</a></li>
+        <li><a href="#step-3-drop-the-database">Step 3: Drop the Database</a></li>
+        <li><a href="#step-4-exit">Step 4: Exit</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary-">Summary 🌟</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h1 id="-how-to-check-and-delete-redis-and-mongodb-data-using-docker-compose">📚 How to Check and Delete Redis and MongoDB Data Using Docker Compose</h1>
@@ -302,7 +324,48 @@
 <li><strong>Drop a specific collection</strong>:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">db.your-collection-name.drop<span class="o">()</span>
 </span></span></code></pre></div>Replace `your-colle&hellip;</li>
-</ol></div><div class="post-footer" id="post-footer">
+</ol>
+<h1 id="guide-to-manage-postgresql-databases-in-docker-">Guide to Manage PostgreSQL Databases in Docker 🐘</h1>
+<p>This guide will help you list PostgreSQL users and databases, find your database name, and drop a PostgreSQL database within a Docker container.</p>
+<h2 id="listing-postgresql-users-and-databases">Listing PostgreSQL Users and Databases</h2>
+<h3 id="step-1-access-the-postgresql-container">Step 1: Access the PostgreSQL Container</h3>
+<p>To access your running PostgreSQL container, use the following command. Replace <code>your_container_name</code> with the actual name or ID of your container.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it your_container_name bash
+</span></span></code></pre></div><h3 id="step-2-connect-to-postgresql">Step 2: Connect to PostgreSQL</h3>
+<p>Once inside the container, connect to the PostgreSQL database using the <code>psql</code> command. Replace <code>username</code> with your PostgreSQL username (often <code>postgres</code>).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">psql -U username
+</span></span></code></pre></div><h3 id="step-3-list-users">Step 3: List Users</h3>
+<p>To list all users, execute:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">du</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-4-list-all-databases">Step 4: List All Databases</h3>
+<p>To list all databases, use:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">l</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-5-find-your-database-name">Step 5: Find Your Database Name</h3>
+<p>If you&rsquo;re not sure about your database name, you can check the list of databases using the command above (<code>\l</code>). Look for the name in the output.</p>
+<h3 id="step-6-exit">Step 6: Exit</h3>
+<p>To exit the <code>psql</code> prompt, type:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">q</span><span class="w">
+</span></span></span></code></pre></div><p>Then, exit the container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span></code></pre></div><hr>
+<h2 id="dropping-a-postgresql-database-">Dropping a PostgreSQL Database 💔</h2>
+<h3 id="step-1-access-the-postgresql-container-1">Step 1: Access the PostgreSQL Container</h3>
+<p>If you are not already inside the container, access it using the same command as before:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it your_container_name bash
+</span></span></code></pre></div><h3 id="step-2-connect-to-postgresql-1">Step 2: Connect to PostgreSQL</h3>
+<p>Connect to PostgreSQL using:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">psql -U username
+</span></span></code></pre></div><h3 id="step-3-drop-the-database">Step 3: Drop the Database</h3>
+<p>After connecting, you can drop the database by executing the following command. Replace <code>zilean</code> with the name of the database you want to drop.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">zilean</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-4-exit">Step 4: Exit</h3>
+<p>To exit the <code>psql</code> prompt, type:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">q</span><span class="w">
+</span></span></span></code></pre></div><p>Then, exit the container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span></code></pre></div><hr>
+<h2 id="summary-">Summary 🌟</h2>
+<p>This guide provided instructions on how to list PostgreSQL users and databases, find your database name, and drop a PostgreSQL database within a Docker container. Ensure you have the necessary permissions and always back up your data before performing destructive operations.</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -313,23 +376,23 @@
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-hashtags="redis,mongo,database"><i class="fab fa-twitter fa-fw"></i></a>
+        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/redis-mongo-database/" data-title="How to drop Redis Mongo and postgress Database" data-hashtags="redis,postgress,mongo,database"><i class="fab fa-twitter fa-fw"></i></a>
   <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/posts/redis-mongo-database/" data-hashtag="redis"><i class="fab fa-facebook-square fa-fw"></i></a>
-  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-web><i class="fab fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/posts/redis-mongo-database/" data-title="How to drop Redis Mongo and postgress Database" data-web><i class="fab fa-whatsapp fa-fw"></i></a>
   <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://example.org/posts/redis-mongo-database/" data-description="redis &amp; mongo "><i class="fab fa-pinterest fa-fw"></i></a>
-  <a href="javascript:void(0);" title="Share on Tumblr" data-sharer="tumblr" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-caption="redis &amp; mongo " data-tags="redis,mongo,database"><i class="fab fa-tumblr fa-fw"></i></a>
-  <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database"><i class="fab fa-weibo fa-fw"></i></a>
-  <a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-description="redis &amp; mongo "><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
-  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database" data-description="redis &amp; mongo "><i class="fab fa-blogger fa-fw"></i></a>
-  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/redis-mongo-database/" data-title="Redis Mongo Database"><i class="fab fa-evernote fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Tumblr" data-sharer="tumblr" data-url="http://example.org/posts/redis-mongo-database/" data-title="How to drop Redis Mongo and postgress Database" data-caption="redis &amp; mongo " data-tags="redis,postgress,mongo,database"><i class="fab fa-tumblr fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/posts/redis-mongo-database/" data-title="How to drop Redis Mongo and postgress Database"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/redis-mongo-database/" data-title="How to drop Redis Mongo and postgress Database"><i class="fab fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/posts/redis-mongo-database/" data-title="How to drop Redis Mongo and postgress Database" data-description="redis &amp; mongo "><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/redis-mongo-database/" data-title="How to drop Redis Mongo and postgress Database" data-description="redis &amp; mongo "><i class="fab fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/redis-mongo-database/" data-title="How to drop Redis Mongo and postgress Database"><i class="fab fa-evernote fa-fw"></i></a>
   </span>
       </div>
     </div>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/redis/">redis</a>,&nbsp;<a href="/tags/mongo/">mongo</a>,&nbsp;<a href="/tags/database/">database</a></section>
+    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/redis/">redis</a>,&nbsp;<a href="/tags/postgress/">postgress</a>,&nbsp;<a href="/tags/mongo/">mongo</a>,&nbsp;<a href="/tags/database/">database</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
     </section>

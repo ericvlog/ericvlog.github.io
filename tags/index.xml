@@ -67,11 +67,11 @@
   <guid>http://example.org/tags/mongo/</guid>
   <description><![CDATA[]]></description>
 </item><item>
-  <title>redis</title>
-  <link>http://example.org/tags/redis/</link>
+  <title>postgress</title>
+  <link>http://example.org/tags/postgress/</link>
   <pubDate>Tue, 04 Jun 2024 16:57:31 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>http://example.org/tags/redis/</guid>
+  <guid>http://example.org/tags/postgress/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
