@@ -9,6 +9,6 @@
   <pubDate>Tue, 04 Jun 2024 16:57:31 &#43;0800</pubDate>
   <author>Eric</author>
   <guid>http://example.org/posts/redis-mongo-database/</guid>
-  <description><![CDATA[redis & mongo ]]></description>
+  <description><![CDATA[How to Drop Databases in Redis, MongoDB, and PostgreSQL with list out all user and database]]></description>
 </item></channel>
 </rss>

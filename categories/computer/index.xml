@@ -182,7 +182,7 @@ docker ps -a If the command does not return any running containers, the daemon i
   <pubDate>Tue, 04 Jun 2024 16:57:31 &#43;0800</pubDate>
   <author>Eric</author>
   <guid>http://example.org/posts/redis-mongo-database/</guid>
-  <description><![CDATA[redis & mongo ]]></description>
+  <description><![CDATA[How to Drop Databases in Redis, MongoDB, and PostgreSQL with list out all user and database]]></description>
 </item><item>
   <title>Install rsshub ,freshrss and ttrss in Debian</title>
   <link>http://example.org/posts/rsshub-ttrss-freshrss/</link>
