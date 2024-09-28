@@ -4,7 +4,7 @@
     <link>http://example.org/tags/docker/</link>
     <description>Docker - Tag - Eric vlog</description>
     <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 27 Sep 2024 13:41:36 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/docker/" rel="self" type="application/rss+xml" /><item>
-  <title>Docker Network Management Guide.md</title>
+  <title>Docker Network Management Guide</title>
   <link>http://example.org/posts/docker-network-management-guide.md/</link>
   <pubDate>Fri, 27 Sep 2024 13:41:36 &#43;0800</pubDate>
   <author>Eric</author>
