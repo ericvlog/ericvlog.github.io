@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>guide - Tag - Eric vlog</title>
+    <link>http://example.org/tags/guide/</link>
+    <description>guide - Tag - Eric vlog</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 27 Sep 2024 13:41:36 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/guide/" rel="self" type="application/rss+xml" /><item>
+  <title>Docker Network Management Guide.md</title>
+  <link>http://example.org/posts/docker-network-management-guide.md/</link>
+  <pubDate>Fri, 27 Sep 2024 13:41:36 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/docker-network-management-guide.md/</guid>
+  <description><![CDATA[Hello welcome to my blogs]]></description>
+</item></channel>
+</rss>

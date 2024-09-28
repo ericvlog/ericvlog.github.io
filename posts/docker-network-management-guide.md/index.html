@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>Docker Network Management Guide.md - Eric vlog</title><meta name="author" content=": ">
+<meta name="description" content="Hello welcome to my blogs" />
+<meta name="keywords" content="docker,networking,guide" /><meta itemprop="name" content="Docker Network Management Guide.md">
+<meta itemprop="description" content="Hello welcome to my blogs"><meta itemprop="datePublished" content="2024-09-27T13:41:36+08:00" />
+<meta itemprop="dateModified" content="2024-09-27T13:41:36+08:00" />
+<meta itemprop="wordCount" content="362"><meta itemprop="image" content="http://example.org/logo.png"/>
+<meta itemprop="keywords" content="docker,networking,guide," /><meta property="og:title" content="Docker Network Management Guide.md" />
+<meta property="og:description" content="Hello welcome to my blogs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/docker-network-management-guide.md/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-09-27T13:41:36+08:00" />
+<meta property="article:modified_time" content="2024-09-27T13:41:36+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="Docker Network Management Guide.md"/>
+<meta name="twitter:description" content="Hello welcome to my blogs"/>
+<meta name="application-name" content="Eric vlog">
+<meta name="apple-mobile-web-app-title" content="Eric vlog"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/docker-network-management-guide.md/" /><link rel="prev" href="http://example.org/posts/adguard-home-dns-on-debian-armbian/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Docker Network Management Guide.md",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/example.org\/posts\/docker-network-management-guide.md\/"
+    },"genre": "posts","keywords": "docker, networking, guide","wordcount":  362 ,
+    "url": "http:\/\/example.org\/posts\/docker-network-management-guide.md\/","datePublished": "2024-09-27T13:41:36+08:00","dateModified": "2024-09-27T13:41:36+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Eric"
+      },"description": "Hello welcome to my blogs"
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Eric vlog"><span class="header-title-text">ωєℓ¢σмє тσ му вℓσg</span></a></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >Tags</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >Categories</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fas fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fas fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Eric vlog"><span class="header-title-text">ωєℓ¢σмє тσ му вℓσg</span></a></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fas fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fas fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >Tags</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >Categories</a></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">Docker Network Management Guide.md</h1><h2 class="single-subtitle">Understanding Docker Networking Basics</h2><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
+      Eric</span></span>
+          <span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div>
+      <div class="post-meta-line"><span title=2024-09-27&#32;13:41:36>
+            <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="27-09-2024" >27-09-2024</time>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;362 words&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#common-error-overlapping-subnets-">Common Error: Overlapping Subnets ⚠️</a></li>
+    <li><a href="#steps-to-resolve-overlapping-subnets-">Steps to Resolve Overlapping Subnets 🔍</a>
+      <ul>
+        <li><a href="#1-list-existing-docker-networks">1. List Existing Docker Networks</a></li>
+        <li><a href="#2-inspect-each-network">2. Inspect Each Network</a></li>
+        <li><a href="#3-check-for-conflicting-subnets">3. Check for Conflicting Subnets</a></li>
+        <li><a href="#4-remove-or-modify-conflicting-networks">4. Remove or Modify Conflicting Networks</a></li>
+        <li><a href="#5-create-a-new-network">5. Create a New Network</a></li>
+      </ul>
+    </li>
+    <li><a href="#inspect-all-networks-at-once-">Inspect All Networks at Once 🔄</a>
+      <ul>
+        <li><a href="#3-alternative-command-without-jq">3. Alternative Command Without <code>jq</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#example-output-">Example Output 📊</a></li>
+    <li><a href="#conclusion-">Conclusion 🎉</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="docker-network-management-guide-">Docker Network Management Guide 🚀</h1>
+<h2 id="overview">Overview</h2>
+<p>Managing Docker networks effectively is crucial for avoiding conflicts, especially when creating new networks. This guide will help you troubleshoot and resolve network overlap issues, ensuring smooth operation.</p>
+<hr>
+<h2 id="common-error-overlapping-subnets-">Common Error: Overlapping Subnets ⚠️</h2>
+<p>When attempting to create a new Docker network, you may encounter the error:</p>
+<pre tabindex="0"><code>failed to create network: Error response from daemon: Pool overlaps with other one on this address space
+</code></pre><p>This error indicates that the subnet you&rsquo;re trying to use is already in use by another network.</p>
+<hr>
+<h2 id="steps-to-resolve-overlapping-subnets-">Steps to Resolve Overlapping Subnets 🔍</h2>
+<h3 id="1-list-existing-docker-networks">1. List Existing Docker Networks</h3>
+<p>Start by listing all Docker networks to identify any that may be conflicting:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network ls
+</span></span></code></pre></div><h3 id="2-inspect-each-network">2. Inspect Each Network</h3>
+<p>To check the subnets of the existing networks, you can inspect them one by one:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network inspect &lt;network_name&gt;
+</span></span></code></pre></div><p>Replace <code>&lt;network_name&gt;</code> with the name of the network.</p>
+<h3 id="3-check-for-conflicting-subnets">3. Check for Conflicting Subnets</h3>
+<p>Look for the <code>IPAM</code> section in the output to find the <code>Subnet</code> field. Identify any networks using the same subnet.</p>
+<h3 id="4-remove-or-modify-conflicting-networks">4. Remove or Modify Conflicting Networks</h3>
+<p>If you find a conflicting network, you can remove it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network rm &lt;conflicting_network_name&gt;
+</span></span></code></pre></div><h3 id="5-create-a-new-network">5. Create a New Network</h3>
+<p>After ensuring no conflicts, create your new network with a unique subnet:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create --subnet<span class="o">=</span>172.24.0.0/16 mediafusion_mediafusion_network
+</span></span></code></pre></div><hr>
+<h2 id="inspect-all-networks-at-once-">Inspect All Networks at Once 🔄</h2>
+<p>To check all Docker networks without inspecting one by one:</p>
+<ol>
+<li>
+<p><strong>Install <code>jq</code></strong> (Optional)
+If you want to filter output, install <code>jq</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install jq
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Inspect All Networks</strong>
+Use the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network ls -q <span class="p">|</span> xargs docker network inspect <span class="p">|</span> jq <span class="s1">&#39;.[] | {Name: .Name, Subnets: .IPAM.Config}&#39;</span>
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="3-alternative-command-without-jq">3. Alternative Command Without <code>jq</code></h3>
+<p>If you prefer not to install <code>jq</code>, run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network ls -q <span class="p">|</span> xargs docker network inspect <span class="p">|</span> grep -E <span class="s1">&#39;Name|Subnet&#39;</span>
+</span></span></code></pre></div><hr>
+<h2 id="example-output-">Example Output 📊</h2>
+<p>The output will look like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;Name&#34;</span><span class="p">:</span> <span class="s2">&#34;mediafusion_default&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;Subnets&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;Subnet&#34;</span><span class="p">:</span> <span class="s2">&#34;172.23.0.0/16&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;Gateway&#34;</span><span class="p">:</span> <span class="s2">&#34;172.23.0.1&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This provides a clear view of each network and its associated subnets.</p>
+<hr>
+<h2 id="conclusion-">Conclusion 🎉</h2>
+<p>By following this guide, you can effectively manage your Docker networks, resolve subnet overlaps, and ensure a smooth container orchestration experience. If you need further assistance, feel free to reach out!</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2024-09-27&#32;13:41:36>Updated on 27-09-2024</span>
+      </div>
+      <div class="post-info-license"></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/docker-network-management-guide.md/" data-title="Docker Network Management Guide.md" data-hashtags="docker,networking,guide"><i class="fab fa-twitter fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/posts/docker-network-management-guide.md/" data-hashtag="docker"><i class="fab fa-facebook-square fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/posts/docker-network-management-guide.md/" data-title="Docker Network Management Guide.md" data-web><i class="fab fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://example.org/posts/docker-network-management-guide.md/" data-description="Hello welcome to my blogs"><i class="fab fa-pinterest fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Tumblr" data-sharer="tumblr" data-url="http://example.org/posts/docker-network-management-guide.md/" data-title="Docker Network Management Guide.md" data-caption="Hello welcome to my blogs" data-tags="docker,networking,guide"><i class="fab fa-tumblr fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/posts/docker-network-management-guide.md/" data-title="Docker Network Management Guide.md"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/docker-network-management-guide.md/" data-title="Docker Network Management Guide.md"><i class="fab fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/posts/docker-network-management-guide.md/" data-title="Docker Network Management Guide.md" data-description="Hello welcome to my blogs"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/docker-network-management-guide.md/" data-title="Docker Network Management Guide.md" data-description="Hello welcome to my blogs"><i class="fab fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/docker-network-management-guide.md/" data-title="Docker Network Management Guide.md"><i class="fab fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/docker/">Docker</a>,&nbsp;<a href="/tags/networking/">networking</a>,&nbsp;<a href="/tags/guide/">guide</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/adguard-home-dns-on-debian-armbian/" class="prev" rel="prev" title="Adguard Home Dns on Debian Armbian"><i class="fas fa-angle-left fa-fw"></i>Adguard Home Dns on Debian Armbian</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreffer">Disqus</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a
+  href="/"
+  
+  
+  
+  
+  
+  
+></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+      <i class="fas fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+      <i class="fas fa-comment fa-fw"></i>
+    </a>
+  </div><div id="mask"></div>
+</div><script type="text/javascript" src="https://ericvlog.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{},"enablePWA":true,"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script></body>
+</html>
