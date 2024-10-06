@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records - Eric vlog</title><meta name="author" content=": ">
+<meta name="description" content="Hello welcome to my blogs" />
+<meta name="keywords" content="sqlite,database" /><meta itemprop="name" content="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records">
+<meta itemprop="description" content="Hello welcome to my blogs"><meta itemprop="datePublished" content="2024-10-05T22:22:29+08:00" />
+<meta itemprop="dateModified" content="2024-10-05T22:22:29+08:00" />
+<meta itemprop="wordCount" content="275"><meta itemprop="image" content="http://example.org/logo.png"/>
+<meta itemprop="keywords" content="sqlite,database," /><meta property="og:title" content="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records" />
+<meta property="og:description" content="Hello welcome to my blogs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/sqlite-comprehensive-guide.md/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-10-05T22:22:29+08:00" />
+<meta property="article:modified_time" content="2024-10-05T22:22:29+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records"/>
+<meta name="twitter:description" content="Hello welcome to my blogs"/>
+<meta name="application-name" content="Eric vlog">
+<meta name="apple-mobile-web-app-title" content="Eric vlog"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/sqlite-comprehensive-guide.md/" /><link rel="prev" href="http://example.org/posts/docker-network-management-guide.md/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/example.org\/posts\/sqlite-comprehensive-guide.md\/"
+    },"genre": "posts","keywords": "sqlite, database","wordcount":  275 ,
+    "url": "http:\/\/example.org\/posts\/sqlite-comprehensive-guide.md\/","datePublished": "2024-10-05T22:22:29+08:00","dateModified": "2024-10-05T22:22:29+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Eric"
+      },"description": "Hello welcome to my blogs"
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Eric vlog"><span class="header-title-text">ωєℓ¢σмє тσ му вℓσg</span></a></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >Tags</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >Categories</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fas fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fas fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Eric vlog"><span class="header-title-text">ωєℓ¢σмє тσ му вℓσg</span></a></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fas fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fas fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >Tags</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >Categories</a></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records</h1><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
+      Eric</span></span>
+          <span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div>
+      <div class="post-meta-line"><span title=2024-10-05&#32;22:22:29>
+            <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="05-10-2024" >05-10-2024</time>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;275 words&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#2-open-your-database-">2. Open Your Database 📂</a></li>
+    <li><a href="#3-check-for-existing-records-">3. Check for Existing Records 🔍</a>
+      <ul>
+        <li><a href="#run-the-following-query">Run the Following Query:</a></li>
+        <li><a href="#interpreting-the-results">Interpreting the Results:</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-delete-records-">4. Delete Records 🗑️</a>
+      <ul>
+        <li><a href="#run-the-following-query-1">Run the Following Query:</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-confirm-deletion-">5. Confirm Deletion ✔️</a>
+      <ul>
+        <li><a href="#run-the-check-again">Run the Check Again:</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion-">Conclusion 🎈</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gh"># 📚 SQLite Guide: Installation, Checking, and Deleting Records
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl"><span class="gu">## 1. Install SQLite 🛠️
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl">To get started with SQLite, you&#39;ll need to install it on your system. Follow these steps:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### For Debian/Ubuntu:
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl"><span class="k">1.</span> <span class="gs">**Open Terminal**</span> 🖥️
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> <span class="gs">**Update Package List**</span>:
+</span></span><span class="line"><span class="cl">   ```bash
+</span></span><span class="line"><span class="cl">   sudo apt update
+</span></span></code></pre></div><ol start="3">
+<li><strong>Install SQLite</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install sqlite3
+</span></span></code></pre></div></li>
+<li><strong>Verify Installation</strong> ✅:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sqlite3 --version
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="2-open-your-database-">2. Open Your Database 📂</h2>
+<p>Once SQLite is installed, you can open your database file:</p>
+<ol>
+<li><strong>Navigate to the Directory</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/appdata/arrr/jellyseerr/db
+</span></span></code></pre></div></li>
+<li><strong>Open SQLite with Your Database</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sqlite3 db.sqlite3
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="3-check-for-existing-records-">3. Check for Existing Records 🔍</h2>
+<p>Before deleting any records, it&rsquo;s good practice to check if they exist.</p>
+<h3 id="run-the-following-query">Run the Following Query:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">id</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">media</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">media_request</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">mediaId</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="interpreting-the-results">Interpreting the Results:</h3>
+<ul>
+<li>The output will show IDs of <code>media_request</code> records that are linked to media entries with a status of <code>5</code>.</li>
+<li>Example Output:
+<pre tabindex="0"><code>1
+3
+5
+7
+8
+9
+10
+11
+14
+15
+28
+</code></pre></li>
+</ul>
+<h2 id="4-delete-records-">4. Delete Records 🗑️</h2>
+<p>If you confirmed that records exist, you can proceed to delete them.</p>
+<h3 id="run-the-following-query-1">Run the Following Query:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">media_request</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">id</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">media</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">media_request</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">mediaId</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><h2 id="5-confirm-deletion-">5. Confirm Deletion ✔️</h2>
+<p>After deleting, it’s important to verify that the records have been removed.</p>
+<h3 id="run-the-check-again">Run the Check Again:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">id</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">media</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">media_request</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">mediaId</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>If the result set is empty, the deletion was successful! 🎉</li>
+</ul>
+<h2 id="conclusion-">Conclusion 🎈</h2>
+<p>You have successfully installed SQLite, checked for existing records, and deleted them as needed. If you have more questions or need further assistance, feel free to ask!</p>
+e></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2024-10-05&#32;22:22:29>Updated on 05-10-2024</span>
+      </div>
+      <div class="post-info-license"></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records" data-hashtags="sqlite,database"><i class="fab fa-twitter fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-hashtag="sqlite"><i class="fab fa-facebook-square fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records" data-web><i class="fab fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-description="Hello welcome to my blogs"><i class="fab fa-pinterest fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Tumblr" data-sharer="tumblr" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records" data-caption="Hello welcome to my blogs" data-tags="sqlite,database"><i class="fab fa-tumblr fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records"><i class="fab fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records" data-description="Hello welcome to my blogs"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records" data-description="Hello welcome to my blogs"><i class="fab fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/sqlite-comprehensive-guide.md/" data-title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records"><i class="fab fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/sqlite/">sqlite</a>,&nbsp;<a href="/tags/database/">database</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/docker-network-management-guide.md/" class="prev" rel="prev" title="Docker Network Management Guide"><i class="fas fa-angle-left fa-fw"></i>Docker Network Management Guide</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreffer">Disqus</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a
+  href="/"
+  
+  
+  
+  
+  
+  
+></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+      <i class="fas fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+      <i class="fas fa-comment fa-fw"></i>
+    </a>
+  </div><div id="mask"></div>
+</div><script type="text/javascript" src="https://ericvlog.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{},"enablePWA":true,"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script></body>
+</html>

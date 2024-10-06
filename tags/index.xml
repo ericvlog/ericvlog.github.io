@@ -3,7 +3,21 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 27 Sep 2024 13:41:36 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 05 Oct 2024 22:22:29 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>database</title>
+  <link>http://example.org/tags/database/</link>
+  <pubDate>Sat, 05 Oct 2024 22:22:29 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/database/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>sqlite</title>
+  <link>http://example.org/tags/sqlite/</link>
+  <pubDate>Sat, 05 Oct 2024 22:22:29 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/sqlite/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>Docker</title>
   <link>http://example.org/tags/docker/</link>
   <pubDate>Fri, 27 Sep 2024 13:41:36 &#43;0800</pubDate>
@@ -58,20 +72,6 @@
   <pubDate>Wed, 21 Aug 2024 13:55:50 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/compose/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>images</title>
-  <link>http://example.org/tags/images/</link>
-  <pubDate>Thu, 06 Jun 2024 00:39:01 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/images/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>database</title>
-  <link>http://example.org/tags/database/</link>
-  <pubDate>Tue, 04 Jun 2024 16:57:31 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/database/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>

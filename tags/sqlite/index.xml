@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>database - Tag - Eric vlog</title>
-    <link>http://example.org/tags/database/</link>
-    <description>database - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 05 Oct 2024 22:22:29 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/database/" rel="self" type="application/rss+xml" /><item>
+    <title>sqlite - Tag - Eric vlog</title>
+    <link>http://example.org/tags/sqlite/</link>
+    <description>sqlite - Tag - Eric vlog</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 05 Oct 2024 22:22:29 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/sqlite/" rel="self" type="application/rss+xml" /><item>
   <title>A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records</title>
   <link>http://example.org/posts/sqlite-comprehensive-guide.md/</link>
   <pubDate>Sat, 05 Oct 2024 22:22:29 &#43;0800</pubDate>
@@ -85,19 +85,5 @@
 </ul>
 <h2 id="conclusion-">Conclusion 🎈</h2>
 <p>You have successfully installed SQLite, checked for existing records, and deleted them as needed. If you have more questions or need further assistance, feel free to ask!</p>]]></description>
-</item><item>
-  <title>How to Drop Databases in Redis, MongoDB, and PostgreSQL</title>
-  <link>http://example.org/posts/redis-mongo-database/</link>
-  <pubDate>Tue, 04 Jun 2024 16:57:31 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/redis-mongo-database/</guid>
-  <description><![CDATA[How to Drop Databases in Redis, MongoDB, and PostgreSQL with list out all user and database]]></description>
-</item><item>
-  <title>Tubesync and Postgresql Guide</title>
-  <link>http://example.org/posts/tubesync-and-postgresql-guide/</link>
-  <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/tubesync-and-postgresql-guide/</guid>
-  <description><![CDATA[]]></description>
 </item></channel>
 </rss>

@@ -247,6 +247,87 @@
 ><i class="fas fa-rss fa-fw"></i>
     </a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/sqlite-comprehensive-guide.md/">A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
+      Eric</span></span>&nbsp;<span class="post-publish" title='2024-10-05 22:22:29'>published on <time datetime="05-10-2024">05-10-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div><div class="content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gh"># 📚 SQLite Guide: Installation, Checking, and Deleting Records
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl"><span class="gu">## 1. Install SQLite 🛠️
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl">To get started with SQLite, you&#39;ll need to install it on your system. Follow these steps:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### For Debian/Ubuntu:
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl"><span class="k">1.</span> <span class="gs">**Open Terminal**</span> 🖥️
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> <span class="gs">**Update Package List**</span>:
+</span></span><span class="line"><span class="cl">   ```bash
+</span></span><span class="line"><span class="cl">   sudo apt update
+</span></span></code></pre></div><ol start="3">
+<li><strong>Install SQLite</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install sqlite3
+</span></span></code></pre></div></li>
+<li><strong>Verify Installation</strong> ✅:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sqlite3 --version
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="2-open-your-database-">2. Open Your Database 📂</h2>
+<p>Once SQLite is installed, you can open your database file:</p>
+<ol>
+<li><strong>Navigate to the Directory</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/appdata/arrr/jellyseerr/db
+</span></span></code></pre></div></li>
+<li><strong>Open SQLite with Your Database</strong>:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sqlite3 db.sqlite3
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="3-check-for-existing-records-">3. Check for Existing Records 🔍</h2>
+<p>Before deleting any records, it&rsquo;s good practice to check if they exist.</p>
+<h3 id="run-the-following-query">Run the Following Query:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">id</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">media</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">media_request</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">mediaId</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="interpreting-the-results">Interpreting the Results:</h3>
+<ul>
+<li>The output will show IDs of <code>media_request</code> records that are linked to media entries with a status of <code>5</code>.</li>
+<li>Example Output:
+<pre tabindex="0"><code>1
+3
+5
+7
+8
+9
+10
+11
+14
+15
+28
+</code></pre></li>
+</ul>
+<h2 id="4-delete-records-">4. Delete Records 🗑️</h2>
+<p>If you confirmed that records exist, you can proceed to delete them.</p>
+<h3 id="run-the-following-query-1">Run the Following Query:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">media_request</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">id</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">media</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">media_request</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">mediaId</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><h2 id="5-confirm-deletion-">5. Confirm Deletion ✔️</h2>
+<p>After deleting, it’s important to verify that the records have been removed.</p>
+<h3 id="run-the-check-again">Run the Check Again:</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">id</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">media</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">media_request</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">media_request</span><span class="p">.</span><span class="n">mediaId</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">media</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>If the result set is empty, the deletion was successful! 🎉</li>
+</ul>
+<h2 id="conclusion-">Conclusion 🎈</h2>
+<p>You have successfully installed SQLite, checked for existing records, and deleted them as needed. If you have more questions or need further assistance, feel free to ask!</p></div><div class="post-footer">
+    <a href="/posts/sqlite-comprehensive-guide.md/">Read More</a><div class="post-tags">
+        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/sqlite/">sqlite</a>,&nbsp;<a href="/tags/database/">database</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/docker-network-management-guide.md/">Docker Network Management Guide</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
       Eric</span></span>&nbsp;<span class="post-publish" title='2024-09-27 13:41:36'>published on <time datetime="27-09-2024">27-09-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div><div class="content">Hello welcome to my blogs</div><div class="post-footer">
@@ -428,13 +509,6 @@ docker ps -a If the command does not return any running containers, the daemon i
       Eric</span></span>&nbsp;<span class="post-publish" title='2024-06-04 16:57:31'>published on <time datetime="04-06-2024">04-06-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div><div class="content">How to Drop Databases in Redis, MongoDB, and PostgreSQL with list out all user and database</div><div class="post-footer">
     <a href="/posts/redis-mongo-database/">Read More</a><div class="post-tags">
         <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/redis/">redis</a>,&nbsp;<a href="/tags/postgress/">postgress</a>,&nbsp;<a href="/tags/mongo/">mongo</a>,&nbsp;<a href="/tags/database/">database</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/rsshub-ttrss-freshrss/">Install rsshub ,freshrss and ttrss in Debian</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
-      Eric</span></span>&nbsp;<span class="post-publish" title='2024-05-31 13:55:50'>published on <time datetime="31-05-2024">31-05-2024</time></span>&nbsp;<span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a>&ensp;<a href="/categories/internet/"><i class="far fa-folder fa-fw"></i>&nbsp;internet</a></span></div><div class="content"><h2 id="compose-with-rsshub-freshrss-container">Compose with rsshub, freshrss container.</h2>
-<h3 id="1-rsshub--freshrss">1. rsshub + freshrss</h3></div><div class="post-footer">
-    <a href="/posts/rsshub-ttrss-freshrss/">Read More</a><div class="post-tags">
-        <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/rsshub/">rsshub</a>,&nbsp;<a href="/tags/ttrss/">ttrss</a>,&nbsp;<a href="/tags/freshrss/">freshrss</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
           <span class="page-link">
             <a href="/">1</a>
