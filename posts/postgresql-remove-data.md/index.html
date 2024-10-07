@@ -11,7 +11,7 @@
 <meta name="keywords" content="postgresql,database" /><meta itemprop="name" content="Postgresql Remove Data Tutorial">
 <meta itemprop="description" content="postgresql bigining guide"><meta itemprop="datePublished" content="2024-10-06T16:47:33+08:00" />
 <meta itemprop="dateModified" content="2024-10-06T16:47:33+08:00" />
-<meta itemprop="wordCount" content="737"><meta itemprop="image" content="http://example.org/logo.png"/>
+<meta itemprop="wordCount" content="893"><meta itemprop="image" content="http://example.org/logo.png"/>
 <meta itemprop="keywords" content="postgresql,database," /><meta property="og:title" content="Postgresql Remove Data Tutorial" />
 <meta property="og:description" content="postgresql bigining guide" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/example.org\/posts\/postgresql-remove-data.md\/"
-    },"genre": "posts","keywords": "postgresql, database","wordcount":  737 ,
+    },"genre": "posts","keywords": "postgresql, database","wordcount":  893 ,
     "url": "http:\/\/example.org\/posts\/postgresql-remove-data.md\/","datePublished": "2024-10-06T16:47:33+08:00","dateModified": "2024-10-06T16:47:33+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -165,8 +165,8 @@
           <span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div>
       <div class="post-meta-line"><span title=2024-10-06&#32;16:47:33>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="06-10-2024" >06-10-2024</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;737 words&nbsp;
-        <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;893 words&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -202,6 +202,15 @@
         <li><a href="#important-considerations-">Important Considerations ⚠️</a></li>
       </ul>
     </li>
+    <li><a href="#-docker-command-entering-postgresql">🐳 Docker Command entering postgresql.</a></li>
+    <li><a href="#-sql-queries">📜 SQL Queries</a>
+      <ul>
+        <li><a href="#media-items-search">Media Items Search</a></li>
+        <li><a href="#check-parent-ids">Check Parent IDs</a></li>
+      </ul>
+    </li>
+    <li><a href="#-info-for-media-item-_id--1314">🔍 Info for Media Item <code>_id = 1314</code></a></li>
+    <li><a href="#-deleting-records">🗑️ Deleting Records</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h1 id="-identifying-your-tv-show-data-in-postgresql">🗂️ Identifying Your TV Show Data in PostgreSQL</h1>
@@ -379,9 +388,36 @@
 <li><strong>Backup</strong>: Always ensure you have a backup before performing delete operations.</li>
 <li><strong>Cascade Deletion</strong>: Consider setting the foreign key constraint in the <code>Season</code> table to <code>ON DELETE CASCADE</code> for future deletions.</li>
 </ul>
-<p>If you have any further questions or need assistance with the queries, feel free to ask! 😊</p>
 <hr>
-<p>This guide provides a comprehensive overview of how to manage your TV show data in PostgreSQL, complete with visual cues and easy-to-follow instructions. Let me know if you need any more adjustments!</p></div><div class="post-footer" id="post-footer">
+<p>Here’s a more compact version for easy copy and paste:</p>
+<hr>
+<h2 id="-docker-command-entering-postgresql">🐳 Docker Command entering postgresql.</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it riven-db psql -U postgres
+</span></span></code></pre></div><h2 id="-sql-queries">📜 SQL Queries</h2>
+<h3 id="media-items-search">Media Items Search</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;MediaItem&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">ILIKE</span><span class="w"> </span><span class="s1">&#39;%Ganbare Doukichan%&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;MediaItem&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">ILIKE</span><span class="w"> </span><span class="s1">&#39;%The Lord of the Rings: The Rings of Power%&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="check-parent-ids">Check Parent IDs</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">d</span><span class="w"> </span><span class="s2">&#34;Episode&#34;</span><span class="w">
+</span></span></span></code></pre></div><h2 id="-info-for-media-item-_id--1314">🔍 Info for Media Item <code>_id = 1314</code></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Movie&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1314</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;StreamBlacklistRelation&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">media_item_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1314</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;StreamRelation&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1314</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Subtitle&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1314</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Show&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1314</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1314</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1314</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Episode&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1314</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h2 id="-deleting-records">🗑️ Deleting Records</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Episode&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4156</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4156</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Show&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4156</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Subtitle&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4156</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;StreamRelation&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4156</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;StreamBlacklistRelation&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">media_item_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4156</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;MediaItem&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4156</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<p>You can easily copy and paste this format! 😊</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
