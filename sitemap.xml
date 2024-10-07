@@ -2,14 +2,16 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
+      <loc>http://example.org/categories/</loc><lastmod>2024-10-06T16:47:33&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/categories/computer/</loc><lastmod>2024-10-06T16:47:33&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/database/</loc><lastmod>2024-10-06T16:47:33&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/</loc><lastmod>2024-10-06T16:47:33&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/postgresql/</loc><lastmod>2024-10-06T16:47:33&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/posts/postgresql-remove-data.md/</loc><lastmod>2024-10-06T16:47:33&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/posts/</loc><lastmod>2024-10-06T16:47:33&#43;08:00</lastmod></url><url>
+      <loc>http://example.org/tags/</loc><lastmod>2024-10-06T16:47:33&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/sqlite-comprehensive-guide.md/</loc><lastmod>2024-10-05T22:22:29&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/categories/</loc><lastmod>2024-10-05T22:22:29&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/categories/computer/</loc><lastmod>2024-10-05T22:22:29&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/database/</loc><lastmod>2024-10-05T22:22:29&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/</loc><lastmod>2024-10-05T22:22:29&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/posts/</loc><lastmod>2024-10-05T22:22:29&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/sqlite/</loc><lastmod>2024-10-05T22:22:29&#43;08:00</lastmod></url><url>
-      <loc>http://example.org/tags/</loc><lastmod>2024-10-05T22:22:29&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/docker/</loc><lastmod>2024-09-27T13:41:36&#43;08:00</lastmod></url><url>
       <loc>http://example.org/posts/docker-network-management-guide.md/</loc><lastmod>2024-09-27T13:41:36&#43;08:00</lastmod></url><url>
       <loc>http://example.org/tags/guide/</loc><lastmod>2024-09-27T13:41:36&#43;08:00</lastmod></url><url>

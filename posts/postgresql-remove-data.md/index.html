@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>Postgresql Remove Data Tutorial - Eric vlog</title><meta name="author" content=": ">
+<meta name="description" content="postgresql bigining guide" />
+<meta name="keywords" content="postgresql,database" /><meta itemprop="name" content="Postgresql Remove Data Tutorial">
+<meta itemprop="description" content="postgresql bigining guide"><meta itemprop="datePublished" content="2024-10-06T16:47:33+08:00" />
+<meta itemprop="dateModified" content="2024-10-06T16:47:33+08:00" />
+<meta itemprop="wordCount" content="737"><meta itemprop="image" content="http://example.org/logo.png"/>
+<meta itemprop="keywords" content="postgresql,database," /><meta property="og:title" content="Postgresql Remove Data Tutorial" />
+<meta property="og:description" content="postgresql bigining guide" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/postgresql-remove-data.md/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-10-06T16:47:33+08:00" />
+<meta property="article:modified_time" content="2024-10-06T16:47:33+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="Postgresql Remove Data Tutorial"/>
+<meta name="twitter:description" content="postgresql bigining guide"/>
+<meta name="application-name" content="Eric vlog">
+<meta name="apple-mobile-web-app-title" content="Eric vlog"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/postgresql-remove-data.md/" /><link rel="prev" href="http://example.org/posts/sqlite-comprehensive-guide.md/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Postgresql Remove Data Tutorial",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/example.org\/posts\/postgresql-remove-data.md\/"
+    },"genre": "posts","keywords": "postgresql, database","wordcount":  737 ,
+    "url": "http:\/\/example.org\/posts\/postgresql-remove-data.md\/","datePublished": "2024-10-06T16:47:33+08:00","dateModified": "2024-10-06T16:47:33+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Eric"
+      },"description": "postgresql bigining guide"
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Eric vlog"><span class="header-title-text">ωєℓ¢σмє тσ му вℓσg</span></a></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >Tags</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >Categories</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fas fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fas fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Eric vlog"><span class="header-title-text">ωєℓ¢σмє тσ му вℓσg</span></a></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fas fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fas fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >Posts</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >Tags</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >Categories</a></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">Postgresql Remove Data Tutorial</h1><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fas fa-user-circle"></i>
+      Eric</span></span>
+          <span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div>
+      <div class="post-meta-line"><span title=2024-10-06&#32;16:47:33>
+            <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="06-10-2024" >06-10-2024</time>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;737 words&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#step-1-list-all-tables-in-the-database-">Step 1: List All Tables in the Database 🗃️</a></li>
+    <li><a href="#step-2-examine-table-structure-">Step 2: Examine Table Structure 🔍</a></li>
+    <li><a href="#step-3-look-for-relevant-columns-">Step 3: Look for Relevant Columns 🔑</a></li>
+    <li><a href="#example-workflow-">Example Workflow 🛠️</a></li>
+    <li><a href="#conclusion-">Conclusion 🏁</a></li>
+    <li><a href="#troubleshooting-command-errors-">Troubleshooting Command Errors ⚠️</a>
+      <ul>
+        <li><a href="#step-1-ensure-you-are-in-the-correct-environment-">Step 1: Ensure You Are in the Correct Environment ✅</a></li>
+        <li><a href="#step-2-execute-the-query-again-">Step 2: Execute the Query Again 🔄</a></li>
+        <li><a href="#step-3-verify-the-output-">Step 3: Verify the Output 📊</a></li>
+      </ul>
+    </li>
+    <li><a href="#checking-for-references-to-_id--3944-">Checking for References to <code>_id = 3944</code> 🔗</a>
+      <ul>
+        <li><a href="#step-1-query-each-table-for-_id--3944-">Step 1: Query Each Table for <code>_id = 3944</code> 🔍</a></li>
+        <li><a href="#step-2-execute-queries-">Step 2: Execute Queries 🏃‍♂️</a></li>
+        <li><a href="#step-3-review-results-">Step 3: Review Results 📋</a></li>
+      </ul>
+    </li>
+    <li><a href="#deleting-shows-and-related-data-">Deleting Shows and Related Data 🗑️</a>
+      <ul>
+        <li><a href="#step-1-check-related-seasons-">Step 1: Check Related Seasons 🔎</a></li>
+        <li><a href="#step-2-delete-related-seasons-">Step 2: Delete Related Seasons ❌</a></li>
+        <li><a href="#step-3-delete-the-show-">Step 3: Delete the Show 🎬</a></li>
+        <li><a href="#complete-workflow-">Complete Workflow 🔄</a></li>
+        <li><a href="#important-considerations-">Important Considerations ⚠️</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="-identifying-your-tv-show-data-in-postgresql">🗂️ Identifying Your TV Show Data in PostgreSQL</h1>
+<p>To locate the table where your TV show data is stored in PostgreSQL, follow these steps:</p>
+<h2 id="step-1-list-all-tables-in-the-database-">Step 1: List All Tables in the Database 🗃️</h2>
+<ol>
+<li>
+<p><strong>Access the PostgreSQL Prompt</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it riven-db psql -U postgres
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Connect to Your Database</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="n">riven</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>List All Tables</strong>:</p>
+<p>Run the following command to view all tables in the current database:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">dt</span><span class="w">
+</span></span></span></code></pre></div><p>This will display a list of tables along with their schema, name, type, and owner.</p>
+</li>
+</ol>
+<h2 id="step-2-examine-table-structure-">Step 2: Examine Table Structure 🔍</h2>
+<p>Once you have a list of tables, examine the structure of each to find the relevant columns for your TV show data.</p>
+<ol>
+<li>
+<p><strong>Describe a Table</strong>:</p>
+<p>For example, to see the structure of the <code>tvshows</code> table:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">d</span><span class="w"> </span><span class="n">tvshows</span><span class="w">
+</span></span></span></code></pre></div><p>This command shows you the columns, their types, and any constraints (like primary keys).</p>
+</li>
+</ol>
+<h2 id="step-3-look-for-relevant-columns-">Step 3: Look for Relevant Columns 🔑</h2>
+<p>When describing a table, look for columns that might contain your TV show data. Common names include:</p>
+<ul>
+<li><code>title</code></li>
+<li><code>name</code></li>
+<li><code>show_name</code></li>
+<li><code>description</code></li>
+<li><code>genre</code></li>
+</ul>
+<h2 id="example-workflow-">Example Workflow 🛠️</h2>
+<p>Here’s how the entire process might look:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Access the PostgreSQL prompt</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it riven-db psql -U postgres
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Connect to your database</span>
+</span></span><span class="line"><span class="cl"><span class="se">\c</span> riven
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># List all tables</span>
+</span></span><span class="line"><span class="cl"><span class="se">\d</span>t
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Describe the &#39;tvshows&#39; table to see its structure</span>
+</span></span><span class="line"><span class="cl"><span class="se">\d</span> tvshows
+</span></span></code></pre></div><h2 id="conclusion-">Conclusion 🏁</h2>
+<p>By following these steps, you can identify which table holds your TV show data and what columns are available for querying or deleting. If you find a table that seems relevant but you&rsquo;re unsure, feel free to share its structure, and I can help you interpret it!</p>
+<hr>
+<h2 id="troubleshooting-command-errors-">Troubleshooting Command Errors ⚠️</h2>
+<p>If you encounter issues with the command you entered, here’s how to resolve them:</p>
+<h3 id="step-1-ensure-you-are-in-the-correct-environment-">Step 1: Ensure You Are in the Correct Environment ✅</h3>
+<p>Make sure you are in the PostgreSQL command prompt (<code>psql</code>). A prompt like <code>riven=#</code> indicates you’re in the right place.</p>
+<h3 id="step-2-execute-the-query-again-">Step 2: Execute the Query Again 🔄</h3>
+<p>Try running the query again:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;MediaItem&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">ILIKE</span><span class="w"> </span><span class="s1">&#39;%Isekai%&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-3-verify-the-output-">Step 3: Verify the Output 📊</h3>
+<p>If the command executes successfully, it should return the <code>_id</code> of any media items that match the title. If there are no results, it will simply return an empty set.</p>
+<hr>
+<h2 id="checking-for-references-to-_id--3944-">Checking for References to <code>_id = 3944</code> 🔗</h2>
+<p>You’ve successfully retrieved a list of tables referencing the <code>MediaItem</code> table. Here’s a summary:</p>
+<table>
+<thead>
+<tr>
+<th>Table Name</th>
+<th>Column Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Movie</td>
+<td>_id</td>
+</tr>
+<tr>
+<td>Show</td>
+<td>_id</td>
+</tr>
+<tr>
+<td>StreamBlacklistRelation</td>
+<td>media_item_id</td>
+</tr>
+<tr>
+<td>StreamRelation</td>
+<td>parent_id</td>
+</tr>
+<tr>
+<td>Subtitle</td>
+<td>parent_id</td>
+</tr>
+<tr>
+<td>Season</td>
+<td>_id</td>
+</tr>
+<tr>
+<td>Episode</td>
+<td>_id</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-1-query-each-table-for-_id--3944-">Step 1: Query Each Table for <code>_id = 3944</code> 🔍</h3>
+<p>Run <code>SELECT</code> queries on each of these tables:</p>
+<ol>
+<li>
+<p><strong>Movie</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Movie&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Show</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Show&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>StreamBlacklistRelation</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;StreamBlacklistRelation&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">media_item_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>StreamRelation</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;StreamRelation&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Subtitle</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Subtitle&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Season</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Episode</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Episode&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ol>
+<h3 id="step-2-execute-queries-">Step 2: Execute Queries 🏃‍♂️</h3>
+<p>Run these queries one by one in your PostgreSQL prompt to check for any records associated with <code>_id = 3944</code>.</p>
+<h3 id="step-3-review-results-">Step 3: Review Results 📋</h3>
+<ul>
+<li>Check each output to see if there are related records.</li>
+<li>If a table returns results, it indicates associations with the <code>MediaItem</code> having <code>_id = 3944</code>.</li>
+</ul>
+<hr>
+<h2 id="deleting-shows-and-related-data-">Deleting Shows and Related Data 🗑️</h2>
+<p>If you need to delete entries, follow these steps:</p>
+<h3 id="step-1-check-related-seasons-">Step 1: Check Related Seasons 🔎</h3>
+<p>First, identify which seasons reference this show:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-2-delete-related-seasons-">Step 2: Delete Related Seasons ❌</h3>
+<p>Once identified, delete those records:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-3-delete-the-show-">Step 3: Delete the Show 🎬</h3>
+<p>After deleting related seasons, you can delete the show itself:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Show&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="complete-workflow-">Complete Workflow 🔄</h3>
+<ol>
+<li>
+<p><strong>Check for Related Seasons</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Delete Related Seasons</strong> (if found):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Delete the Show</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Show&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ol>
+<h3 id="important-considerations-">Important Considerations ⚠️</h3>
+<ul>
+<li><strong>Backup</strong>: Always ensure you have a backup before performing delete operations.</li>
+<li><strong>Cascade Deletion</strong>: Consider setting the foreign key constraint in the <code>Season</code> table to <code>ON DELETE CASCADE</code> for future deletions.</li>
+</ul>
+<p>If you have any further questions or need assistance with the queries, feel free to ask! 😊</p>
+<hr>
+<p>This guide provides a comprehensive overview of how to manage your TV show data in PostgreSQL, complete with visual cues and easy-to-follow instructions. Let me know if you need any more adjustments!</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2024-10-06&#32;16:47:33>Updated on 06-10-2024</span>
+      </div>
+      <div class="post-info-license"></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/postgresql-remove-data.md/" data-title="Postgresql Remove Data Tutorial" data-hashtags="postgresql,database"><i class="fab fa-twitter fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/posts/postgresql-remove-data.md/" data-hashtag="postgresql"><i class="fab fa-facebook-square fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/posts/postgresql-remove-data.md/" data-title="Postgresql Remove Data Tutorial" data-web><i class="fab fa-whatsapp fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://example.org/posts/postgresql-remove-data.md/" data-description="postgresql bigining guide"><i class="fab fa-pinterest fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Tumblr" data-sharer="tumblr" data-url="http://example.org/posts/postgresql-remove-data.md/" data-title="Postgresql Remove Data Tutorial" data-caption="postgresql bigining guide" data-tags="postgresql,database"><i class="fab fa-tumblr fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/posts/postgresql-remove-data.md/" data-title="Postgresql Remove Data Tutorial"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/postgresql-remove-data.md/" data-title="Postgresql Remove Data Tutorial"><i class="fab fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/posts/postgresql-remove-data.md/" data-title="Postgresql Remove Data Tutorial" data-description="postgresql bigining guide"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a>
+  <a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/postgresql-remove-data.md/" data-title="Postgresql Remove Data Tutorial" data-description="postgresql bigining guide"><i class="fab fa-blogger fa-fw"></i></a>
+  <a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/postgresql-remove-data.md/" data-title="Postgresql Remove Data Tutorial"><i class="fab fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/postgresql/">postgresql</a>,&nbsp;<a href="/tags/database/">database</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/sqlite-comprehensive-guide.md/" class="prev" rel="prev" title="A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records"><i class="fas fa-angle-left fa-fw"></i>A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreffer">Disqus</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a
+  href="/"
+  
+  
+  
+  
+  
+  
+></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+      <i class="fas fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+      <i class="fas fa-comment fa-fw"></i>
+    </a>
+  </div><div id="mask"></div>
+</div><script type="text/javascript" src="https://ericvlog.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{},"enablePWA":true,"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script></body>
+</html>

@@ -3,7 +3,191 @@
     <title>computer - Category - Eric vlog</title>
     <link>http://example.org/categories/computer/</link>
     <description>computer - Category - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 05 Oct 2024 22:22:29 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/computer/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 06 Oct 2024 16:47:33 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/computer/" rel="self" type="application/rss+xml" /><item>
+  <title>Postgresql Remove Data Tutorial</title>
+  <link>http://example.org/posts/postgresql-remove-data.md/</link>
+  <pubDate>Sun, 06 Oct 2024 16:47:33 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/postgresql-remove-data.md/</guid>
+  <description><![CDATA[<h1 id="-identifying-your-tv-show-data-in-postgresql">🗂️ Identifying Your TV Show Data in PostgreSQL</h1>
+<p>To locate the table where your TV show data is stored in PostgreSQL, follow these steps:</p>
+<h2 id="step-1-list-all-tables-in-the-database-">Step 1: List All Tables in the Database 🗃️</h2>
+<ol>
+<li>
+<p><strong>Access the PostgreSQL Prompt</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it riven-db psql -U postgres
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Connect to Your Database</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="n">riven</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>List All Tables</strong>:</p>
+<p>Run the following command to view all tables in the current database:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">dt</span><span class="w">
+</span></span></span></code></pre></div><p>This will display a list of tables along with their schema, name, type, and owner.</p>
+</li>
+</ol>
+<h2 id="step-2-examine-table-structure-">Step 2: Examine Table Structure 🔍</h2>
+<p>Once you have a list of tables, examine the structure of each to find the relevant columns for your TV show data.</p>
+<ol>
+<li>
+<p><strong>Describe a Table</strong>:</p>
+<p>For example, to see the structure of the <code>tvshows</code> table:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">d</span><span class="w"> </span><span class="n">tvshows</span><span class="w">
+</span></span></span></code></pre></div><p>This command shows you the columns, their types, and any constraints (like primary keys).</p>
+</li>
+</ol>
+<h2 id="step-3-look-for-relevant-columns-">Step 3: Look for Relevant Columns 🔑</h2>
+<p>When describing a table, look for columns that might contain your TV show data. Common names include:</p>
+<ul>
+<li><code>title</code></li>
+<li><code>name</code></li>
+<li><code>show_name</code></li>
+<li><code>description</code></li>
+<li><code>genre</code></li>
+</ul>
+<h2 id="example-workflow-">Example Workflow 🛠️</h2>
+<p>Here’s how the entire process might look:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Access the PostgreSQL prompt</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it riven-db psql -U postgres
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Connect to your database</span>
+</span></span><span class="line"><span class="cl"><span class="se">\c</span> riven
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># List all tables</span>
+</span></span><span class="line"><span class="cl"><span class="se">\d</span>t
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Describe the &#39;tvshows&#39; table to see its structure</span>
+</span></span><span class="line"><span class="cl"><span class="se">\d</span> tvshows
+</span></span></code></pre></div><h2 id="conclusion-">Conclusion 🏁</h2>
+<p>By following these steps, you can identify which table holds your TV show data and what columns are available for querying or deleting. If you find a table that seems relevant but you&rsquo;re unsure, feel free to share its structure, and I can help you interpret it!</p>
+<hr>
+<h2 id="troubleshooting-command-errors-">Troubleshooting Command Errors ⚠️</h2>
+<p>If you encounter issues with the command you entered, here’s how to resolve them:</p>
+<h3 id="step-1-ensure-you-are-in-the-correct-environment-">Step 1: Ensure You Are in the Correct Environment ✅</h3>
+<p>Make sure you are in the PostgreSQL command prompt (<code>psql</code>). A prompt like <code>riven=#</code> indicates you’re in the right place.</p>
+<h3 id="step-2-execute-the-query-again-">Step 2: Execute the Query Again 🔄</h3>
+<p>Try running the query again:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;MediaItem&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">ILIKE</span><span class="w"> </span><span class="s1">&#39;%Isekai%&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-3-verify-the-output-">Step 3: Verify the Output 📊</h3>
+<p>If the command executes successfully, it should return the <code>_id</code> of any media items that match the title. If there are no results, it will simply return an empty set.</p>
+<hr>
+<h2 id="checking-for-references-to-_id--3944-">Checking for References to <code>_id = 3944</code> 🔗</h2>
+<p>You’ve successfully retrieved a list of tables referencing the <code>MediaItem</code> table. Here’s a summary:</p>
+<table>
+<thead>
+<tr>
+<th>Table Name</th>
+<th>Column Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Movie</td>
+<td>_id</td>
+</tr>
+<tr>
+<td>Show</td>
+<td>_id</td>
+</tr>
+<tr>
+<td>StreamBlacklistRelation</td>
+<td>media_item_id</td>
+</tr>
+<tr>
+<td>StreamRelation</td>
+<td>parent_id</td>
+</tr>
+<tr>
+<td>Subtitle</td>
+<td>parent_id</td>
+</tr>
+<tr>
+<td>Season</td>
+<td>_id</td>
+</tr>
+<tr>
+<td>Episode</td>
+<td>_id</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-1-query-each-table-for-_id--3944-">Step 1: Query Each Table for <code>_id = 3944</code> 🔍</h3>
+<p>Run <code>SELECT</code> queries on each of these tables:</p>
+<ol>
+<li>
+<p><strong>Movie</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Movie&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Show</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Show&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>StreamBlacklistRelation</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;StreamBlacklistRelation&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">media_item_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>StreamRelation</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;StreamRelation&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Subtitle</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Subtitle&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Season</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Episode</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Episode&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ol>
+<h3 id="step-2-execute-queries-">Step 2: Execute Queries 🏃‍♂️</h3>
+<p>Run these queries one by one in your PostgreSQL prompt to check for any records associated with <code>_id = 3944</code>.</p>
+<h3 id="step-3-review-results-">Step 3: Review Results 📋</h3>
+<ul>
+<li>Check each output to see if there are related records.</li>
+<li>If a table returns results, it indicates associations with the <code>MediaItem</code> having <code>_id = 3944</code>.</li>
+</ul>
+<hr>
+<h2 id="deleting-shows-and-related-data-">Deleting Shows and Related Data 🗑️</h2>
+<p>If you need to delete entries, follow these steps:</p>
+<h3 id="step-1-check-related-seasons-">Step 1: Check Related Seasons 🔎</h3>
+<p>First, identify which seasons reference this show:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-2-delete-related-seasons-">Step 2: Delete Related Seasons ❌</h3>
+<p>Once identified, delete those records:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="step-3-delete-the-show-">Step 3: Delete the Show 🎬</h3>
+<p>After deleting related seasons, you can delete the show itself:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Show&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="complete-workflow-">Complete Workflow 🔄</h3>
+<ol>
+<li>
+<p><strong>Check for Related Seasons</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Delete Related Seasons</strong> (if found):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Season&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Delete the Show</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;Show&#34;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3944</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ol>
+<h3 id="important-considerations-">Important Considerations ⚠️</h3>
+<ul>
+<li><strong>Backup</strong>: Always ensure you have a backup before performing delete operations.</li>
+<li><strong>Cascade Deletion</strong>: Consider setting the foreign key constraint in the <code>Season</code> table to <code>ON DELETE CASCADE</code> for future deletions.</li>
+</ul>
+<p>If you have any further questions or need assistance with the queries, feel free to ask! 😊</p>
+<hr>
+<p>This guide provides a comprehensive overview of how to manage your TV show data in PostgreSQL, complete with visual cues and easy-to-follow instructions. Let me know if you need any more adjustments!</p>]]></description>
+</item><item>
   <title>A Comprehensive Guide to SQLite: Installation, Checking, and Deleting Records</title>
   <link>http://example.org/posts/sqlite-comprehensive-guide.md/</link>
   <pubDate>Sat, 05 Oct 2024 22:22:29 &#43;0800</pubDate>
@@ -299,12 +483,5 @@ sudo nano /etc/systemd/system/rclone-mount.service Add the following content to 
   <description><![CDATA[🚀 Step-by-Step Guide for Setting Up Your Debian Server 1. Install sudo Command Switch to root user: su - Install sudo: apt-get install sudo Add user to sudo groups: usermod -aG sudo username Check user groups: id username Logout and login SSH again. 2. 🐋 Install Docker &amp; Portainer 2.0 on Debian-Based Distros Install Docker:
 sudo apt install docker.io sudo systemctl start docker Download and run Portainer 2.0:
 sudo docker pull portainer/portainer-ce sudo docker run --restart=always --name=portainer -d -p 9000:9000 -v /var/run/docker.]]></description>
-</item><item>
-  <title>Tubesync and Postgresql Guide</title>
-  <link>http://example.org/posts/tubesync-and-postgresql-guide/</link>
-  <pubDate>Thu, 12 May 2022 22:21:50 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/tubesync-and-postgresql-guide/</guid>
-  <description><![CDATA[]]></description>
 </item></channel>
 </rss>
