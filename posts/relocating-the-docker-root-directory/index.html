@@ -11,7 +11,7 @@
 <meta name="keywords" content="docker,compose" /><meta itemprop="name" content="Guide to Moving the Default /var/lib/docker to Another Directory on Linux">
 <meta itemprop="description" content="Guide to Moving the Default /var/lib/docker to Another Directory on Linux"><meta itemprop="datePublished" content="2024-08-21T13:55:50+08:00" />
 <meta itemprop="dateModified" content="2024-08-21T13:55:50+08:00" />
-<meta itemprop="wordCount" content="250"><meta itemprop="image" content="http://example.org/logo.png"/>
+<meta itemprop="wordCount" content="272"><meta itemprop="image" content="http://example.org/logo.png"/>
 <meta itemprop="keywords" content="docker,compose," /><meta property="og:title" content="Guide to Moving the Default /var/lib/docker to Another Directory on Linux" />
 <meta property="og:description" content="Guide to Moving the Default /var/lib/docker to Another Directory on Linux" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/example.org\/posts\/relocating-the-docker-root-directory\/"
-    },"genre": "posts","keywords": "docker, compose","wordcount":  250 ,
+    },"genre": "posts","keywords": "docker, compose","wordcount":  272 ,
     "url": "http:\/\/example.org\/posts\/relocating-the-docker-root-directory\/","datePublished": "2024-08-21T13:55:50+08:00","dateModified": "2024-08-21T13:55:50+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -165,7 +165,7 @@
           <span class="post-category">included in <a href="/categories/computer/"><i class="far fa-folder fa-fw"></i>&nbsp;computer</a></span></div>
       <div class="post-meta-line"><span title=2024-08-21&#32;13:55:50>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="21-08-2024" >21-08-2024</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;250 words&nbsp;
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;272 words&nbsp;
         <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
@@ -212,7 +212,9 @@
 </span></span></code></pre></div><h2 id="5--verify-docker-is-working">5. ✅ Verify Docker is Working</h2>
 <p>To check that everything is working correctly, list your Docker images:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker images
-</span></span></code></pre></div><p>If your images and containers appear as expected, the move was successful!</p>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker info <span class="p">|</span> grep <span class="s2">&#34;Docker Root Dir&#34;</span>
+</span></span></code></pre></div><p>Use the command above to check if the new location is ready to be applied.</p>
+<p>If your images and containers appear as expected, the move was successful!</p>
 <h2 id="6--clean-up-the-old-docker-directory">6. 🗑️ Clean Up the Old Docker Directory</h2>
 <p>Once you have confirmed everything is running smoothly, you can safely remove the old Docker directory:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo rm -r /var/lib/docker
