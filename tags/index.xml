@@ -3,7 +3,28 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 06 Oct 2024 16:47:33 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>innerworld</title>
+  <link>http://example.org/tags/innerworld/</link>
+  <pubDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/innerworld/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>philosophy</title>
+  <link>http://example.org/tags/philosophy/</link>
+  <pubDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/philosophy/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>samadhi</title>
+  <link>http://example.org/tags/samadhi/</link>
+  <pubDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/samadhi/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>database</title>
   <link>http://example.org/tags/database/</link>
   <pubDate>Sun, 06 Oct 2024 16:47:33 &#43;0800</pubDate>
@@ -51,27 +72,6 @@
   <pubDate>Thu, 05 Sep 2024 20:27:24 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/adguard-home/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>Armbian</title>
-  <link>http://example.org/tags/armbian/</link>
-  <pubDate>Thu, 05 Sep 2024 20:27:24 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/armbian/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>Debian</title>
-  <link>http://example.org/tags/debian/</link>
-  <pubDate>Thu, 05 Sep 2024 20:27:24 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/debian/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>DNS</title>
-  <link>http://example.org/tags/dns/</link>
-  <pubDate>Thu, 05 Sep 2024 20:27:24 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/dns/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>

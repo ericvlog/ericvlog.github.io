@@ -3,7 +3,14 @@
     <title>samadhi - Tag - Eric vlog</title>
     <link>http://example.org/tags/samadhi/</link>
     <description>samadhi - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/samadhi/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/samadhi/" rel="self" type="application/rss+xml" /><item>
+  <title>My Samadhi</title>
+  <link>http://example.org/posts/my-samadhi/</link>
+  <pubDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/my-samadhi/</guid>
+  <description><![CDATA[threads for collect all my thought about inner world]]></description>
+</item><item>
   <title>三摩地第 3 部 無路之路</title>
   <link>http://example.org/posts/samadhi-part-3-the-pathless-path/</link>
   <pubDate>Wed, 23 Aug 2023 11:42:04 &#43;0800</pubDate>
