@@ -3,9 +3,16 @@
     <title>Eric vlog</title>
     <link>http://example.org/</link>
     <description>Eric blog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 19 Aug 2025 18:52:04 &#43;0800</lastBuildDate>
       <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Btcusdt short selling 2025-8-14</title>
+  <link>http://example.org/posts/btcusdt2025-8-14-short/</link>
+  <pubDate>Tue, 19 Aug 2025 18:52:04 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/btcusdt2025-8-14-short/</guid>
+  <description><![CDATA[<p></p>]]></description>
+</item><item>
   <title>My Samadhi 🧘 test</title>
   <link>http://example.org/posts/my-samadhi/</link>
   <pubDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</pubDate>
@@ -503,15 +510,5 @@ docker ps -a If the command does not return any running containers, the daemon i
   <guid>http://example.org/posts/rsshub-ttrss-freshrss/</guid>
   <description><![CDATA[<h2 id="compose-with-rsshub-freshrss-container">Compose with rsshub, freshrss container.</h2>
 <h3 id="1-rsshub--freshrss">1. rsshub + freshrss</h3>]]></description>
-</item><item>
-  <title>Rclone Automount on Linux</title>
-  <link>http://example.org/posts/rclone-automount-linux/</link>
-  <pubDate>Mon, 20 May 2024 09:24:50 &#43;0800</pubDate>
-  <author>Eric</author>
-  <guid>http://example.org/posts/rclone-automount-linux/</guid>
-  <description><![CDATA[Automatically Mounting rclone Remote Directory on Debian 11 (pikpak) To automatically mount the remote directory using rclone on system restart in Debian 11, you can create a systemd service unit. Here&rsquo;s how you can do it:
-Create a systemd service unit file: Open a terminal and create a new service unit file using your favorite text editor. For example:
-sudo nano /etc/systemd/system/rclone-mount.service Add the following content to the file:
-[Unit] Description=RClone Mount Service After=network-online.]]></description>
 </item></channel>
 </rss>

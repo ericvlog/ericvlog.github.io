@@ -3,7 +3,14 @@
     <title>Tags - Tag - Eric vlog</title>
     <link>http://example.org/tags/</link>
     <description>Tags - Tag - Eric vlog</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 19 Aug 2025 18:52:04 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>btc</title>
+  <link>http://example.org/tags/btc/</link>
+  <pubDate>Tue, 19 Aug 2025 18:52:04 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>http://example.org/tags/btc/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>innerworld</title>
   <link>http://example.org/tags/innerworld/</link>
   <pubDate>Wed, 22 Jan 2025 02:53:27 &#43;0800</pubDate>
@@ -65,13 +72,6 @@
   <pubDate>Fri, 27 Sep 2024 13:41:36 &#43;0800</pubDate>
   <author>Author</author>
   <guid>http://example.org/tags/networking/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>AdGuard Home</title>
-  <link>http://example.org/tags/adguard-home/</link>
-  <pubDate>Thu, 05 Sep 2024 20:27:24 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>http://example.org/tags/adguard-home/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
