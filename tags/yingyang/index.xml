@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>yingyang - Tag - Eric vlog</title>
+    <link>http://example.org/tags/yingyang/</link>
+    <description>yingyang - Tag - Eric vlog</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 14 Sep 2025 10:55:57 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/yingyang/" rel="self" type="application/rss+xml" /><item>
+  <title>Divergence Table</title>
+  <link>http://example.org/posts/divergence-table/</link>
+  <pubDate>Sun, 14 Sep 2025 10:55:57 &#43;0800</pubDate>
+  <author>Eric</author>
+  <guid>http://example.org/posts/divergence-table/</guid>
+  <description><![CDATA[<p>结合自己的指标，分定阴阳和信号指标，信号指标有阿拉丁，三角信号，阴阳可以分裂成，阴阳，阴阴，阳阳，阳阴</p>]]></description>
+</item></channel>
+</rss>
