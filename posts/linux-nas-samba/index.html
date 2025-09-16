@@ -446,7 +446,7 @@ sudo apt install mdadm
 <p>Update /etc/fstab</p>
 <p>To ensure the RAID array is mounted automatically at boot, add an entry to /etc/fstab. First, get the UUID of the RAID array:</p>
 <p><code>sudo blkid /dev/md0</code></p>
-<p>Add the following line to /etc/fstab, replacing UUID=<!-- raw HTML omitted --> with the actual UUID:</p>
+<p>Add the following line to /etc/fstab, replacing UUID=<your-uuid> with the actual UUID:</p>
 <p><code>UUID=&lt;your-uuid&gt; /mnt/raid ext4 defaults 0 0</code></p>
 </li>
 <li>
